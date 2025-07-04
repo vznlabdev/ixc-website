@@ -1,38 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "IncoXchange - Digital Transformation & Business Solutions",
-  description: "Transform your business with IncoXchange. We provide innovative digital solutions including web development, mobile apps, cloud solutions, and consulting services.",
+  title: "incoXchange - Digital Transformation & Business Solutions",
+  description: "Transform your business with incoXchange. We provide innovative digital solutions including web development, mobile apps, cloud solutions, and consulting services.",
   keywords: "digital transformation, web development, mobile apps, cloud solutions, consulting, business solutions",
-  authors: [{ name: "IncoXchange Team" }],
-  creator: "IncoXchange",
-  publisher: "IncoXchange",
+  authors: [{ name: "incoXchange Team" }],
+  creator: "incoXchange",
+  publisher: "incoXchange",
   openGraph: {
-    title: "IncoXchange - Digital Transformation & Business Solutions",
-    description: "Transform your business with IncoXchange. We provide innovative digital solutions for modern businesses.",
+    title: "incoXchange - Digital Transformation & Business Solutions",
+    description: "Transform your business with incoXchange. We provide innovative digital solutions for modern businesses.",
     url: "https://incoxchange.com",
-    siteName: "IncoXchange",
+    siteName: "incoXchange",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "IncoXchange - Digital Transformation & Business Solutions",
-    description: "Transform your business with IncoXchange. We provide innovative digital solutions for modern businesses.",
+    title: "incoXchange - Digital Transformation & Business Solutions",
+    description: "Transform your business with incoXchange. We provide innovative digital solutions for modern businesses.",
   },
 };
 
@@ -44,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${publicSans.variable} font-sans antialiased`}
       >
         <ThemeProvider>
           <Header />

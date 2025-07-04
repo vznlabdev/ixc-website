@@ -4,12 +4,21 @@ import { DarkModeToggle } from '@/components/DarkModeToggle'
 
 export default function Header() {
   return (
-    <header className="bg-background border-b shadow-sm">
+    <header className="sticky top-0 z-50 bg-background border-b shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-foreground">
-              IncoXchange
+            <Link href="/" className="flex items-center space-x-2">
+              {/* Logomark */}
+              <img 
+                src="/incoxchange-logomark.svg" 
+                alt="incoXchange Logo" 
+                className="w-8 h-8"
+              />
+              {/* Logo text */}
+              <span className="text-2xl font-bold text-foreground">
+                incoXchange
+              </span>
             </Link>
           </div>
           

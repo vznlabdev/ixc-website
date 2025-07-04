@@ -1,6 +1,6 @@
-# IncoXchange Website
+# incoXchange Website
 
-A modern, responsive website for IncoXchange built with Next.js, Sanity CMS, Tailwind CSS, and Shadcn/ui components.
+A modern, responsive website for incoXchange built with Next.js, Sanity CMS, Tailwind CSS, and Shadcn/ui components.
 
 ## 🚀 Technologies Used
 
@@ -182,4 +182,4 @@ For support, please contact the development team or create an issue in the repos
 
 ---
 
-Built with ❤️ for IncoXchange 
+Built with ❤️ for incoXchange 

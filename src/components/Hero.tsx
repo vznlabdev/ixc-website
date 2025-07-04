@@ -9,7 +9,7 @@ interface HeroProps {
 }
 
 export default function Hero({ 
-  title = "Transform Your Business with IncoXchange", 
+  title = "Transform Your Business with incoXchange", 
   subtitle = "We provide innovative digital solutions to help your business thrive in the modern world. From web development to cloud solutions, we've got you covered.",
   ctaText = "Get Started Today",
   ctaUrl = "/contact"
