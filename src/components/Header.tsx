@@ -16,7 +16,7 @@ export default function Header() {
                 className="w-8 h-8"
               />
               {/* Logo text */}
-              <span className="text-2xl font-bold text-foreground">
+              <span className="text-2xl font-medium text-foreground">
                 incoXchange
               </span>
             </Link>

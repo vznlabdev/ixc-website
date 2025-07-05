@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Public_Sans } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-const publicSans = Public_Sans({
-  variable: "--font-public-sans",
+const instrumentSans = Instrument_Sans({
+  variable: "--font-instrument-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -40,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${publicSans.variable} font-sans antialiased`}
+        className={`${instrumentSans.variable} font-sans antialiased`}
       >
         <ThemeProvider>
           <Header />

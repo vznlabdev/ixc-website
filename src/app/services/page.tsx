@@ -8,7 +8,7 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 dark:from-blue-800 dark:via-purple-800 dark:to-blue-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-medium mb-6">
             Our Services
           </h1>
                       <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">
@@ -28,7 +28,7 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-16 bg-accent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-accent-foreground">
+          <h2 className="text-3xl md:text-4xl font-medium mb-6 text-accent-foreground">
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto text-accent-foreground/80">
