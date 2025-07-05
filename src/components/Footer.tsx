@@ -1,11 +1,12 @@
 import Link from 'next/link'
+import { Linkedin, Twitter, Facebook } from 'lucide-react'
 
 export default function Footer() {
   return (
     <footer className="bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-8 gap-8 md:gap-10 py-12">
-          <div className="col-span-1 md:col-span-2 lg:col-span-3 md:mr-4 lg:mr-6">
+          <div className="col-span-1 md:col-span-4 lg:col-span-4 md:mr-4 lg:mr-6">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               {/* Logomark */}
               <img 
@@ -21,12 +22,20 @@ export default function Footer() {
             <p className="text-muted-foreground mb-4">
               Transform your Project Management Workflow
             </p>
+            <div className="flex space-x-4">
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Linkedin className="h-5 w-5 fill-current" />
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Twitter className="h-5 w-5 fill-current" />
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Facebook className="h-5 w-5 fill-current" />
+              </Link>
+            </div>
           </div>
           
-          {/* Spacer column - hidden on tablet, shown on desktop */}
-          <div className="hidden lg:block"></div>
-          
-          <div className="col-span-1 md:col-span-6 lg:col-span-4 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6 md:justify-items-end">
+          <div className="col-span-1 md:col-span-4 lg:col-span-4 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
           <div>
             <h4 className="text-lg font-medium mb-4 text-foreground" style={{ fontSize: '.875rem' }}>Product</h4>
             <ul className="space-y-2">
@@ -106,26 +115,21 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-lg font-medium mb-4 text-foreground" style={{ fontSize: '.875rem' }}>Connect</h4>
+            <h4 className="text-lg font-medium mb-4 text-foreground" style={{ fontSize: '.875rem' }}>Legal</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  LinkedIn
+                  Privacy Policy
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Twitter
+                  Terms & Conditions
                 </Link>
               </li>
               <li>
                 <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Facebook
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Newsletter
+                  Cookie Policy
                 </Link>
               </li>
             </ul>
@@ -135,7 +139,7 @@ export default function Footer() {
         
         <div className="pt-8 pb-4">
           <p className="text-left text-muted-foreground" style={{ fontSize: '0.75rem' }}>
-            © 2024 incoXchange. All rights reserved.
+            © {new Date().getFullYear()} incoXchange. All rights reserved.
           </p>
         </div>
       </div>
