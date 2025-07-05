@@ -1,4 +1,4 @@
-# incoXchange Website
+# IncoXchange Website
 
 A modern, responsive website for incoXchange built with Next.js, Sanity CMS, Tailwind CSS, and Shadcn/ui components.
 
