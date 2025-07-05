@@ -3,6 +3,7 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Quote } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
 
 interface Testimonial {
   quote: string;
@@ -86,6 +87,64 @@ const metrics: Metric[] = [
   }
 ];
 
+// Custom hook for animated counter
+const useAnimatedCounter = (targetValue: number, duration: number = 1200) => {
+  const [currentValue, setCurrentValue] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  
+  useEffect(() => {
+    if (!isVisible) {
+      setCurrentValue(0);
+      return;
+    }
+    
+    const startTime = Date.now();
+    const startValue = 0;
+    
+    const animate = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Ease out animation
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(startValue + (targetValue - startValue) * easeOut);
+      
+      setCurrentValue(value);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+    
+    animate();
+  }, [isVisible, targetValue, duration]);
+  
+  return { currentValue, setIsVisible };
+};
+
+// Custom hook for intersection observer
+const useIntersectionObserver = (threshold = 0.1) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+      },
+      { threshold }
+    );
+    
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    
+    return () => observer.disconnect();
+  }, [threshold]);
+  
+  return { ref, isIntersecting };
+};
+
 // Helper function to get the appropriate image source for testimonials
 const getImageSource = (index: number, name: string) => {
   const firstName = name.split(' ')[0].toLowerCase();
@@ -104,7 +163,30 @@ const getFallbackImageSource = (index: number) => {
   return `/${fallbackPhotos[index % fallbackPhotos.length]}.png`;
 };
 
+// Animated metric component
+const AnimatedMetric = ({ percentage, description, isVisible }: { percentage: string, description: string, isVisible: boolean }) => {
+  const numericValue = parseInt(percentage.replace('%', ''));
+  const counter = useAnimatedCounter(numericValue, 1200);
+  
+  useEffect(() => {
+    counter.setIsVisible(isVisible);
+  }, [isVisible, counter]);
+  
+  return (
+    <div className="text-left">
+      <div className="text-4xl md:text-5xl font-medium text-primary mb-2">
+        {counter.currentValue}%
+      </div>
+      <p className="text-muted-foreground text-sm">
+        {description}
+      </p>
+    </div>
+  );
+};
+
 export default function TestimonialsSection() {
+  const { ref: metricsRef, isIntersecting } = useIntersectionObserver(0.2);
+  
   return (
     <section className="py-16 bg-background dark:bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -201,16 +283,14 @@ export default function TestimonialsSection() {
 
       {/* Metrics */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap gap-8 md:gap-12">
+        <div ref={metricsRef} className="flex flex-wrap gap-8 md:gap-12">
           {metrics.map((metric, index) => (
-            <div key={index} className="text-left">
-              <div className="text-4xl md:text-5xl font-medium text-primary mb-2">
-                {metric.percentage}
-              </div>
-              <p className="text-muted-foreground text-sm">
-                {metric.description}
-              </p>
-            </div>
+            <AnimatedMetric
+              key={index}
+              percentage={metric.percentage}
+              description={metric.description}
+              isVisible={isIntersecting}
+            />
           ))}
         </div>
         <p className="text-white mt-8" style={{ fontSize: '14px' }}>

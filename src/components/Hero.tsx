@@ -38,11 +38,11 @@ export default function Hero({
                 </>
               )}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 items-start" style={{ paddingBottom: '2rem' }}>
+            <div className="flex flex-row gap-3 md:gap-4 items-start" style={{ paddingBottom: '2rem' }}>
               <Button 
                 asChild 
                 size="lg" 
-                className="font-semibold px-10 py-5" 
+                className="font-semibold px-6 py-5 md:px-10" 
                 style={{ fontSize: '12px' }}
               >
                 <Link href={ctaUrl}>
@@ -53,7 +53,7 @@ export default function Hero({
                 asChild 
                 size="lg" 
                 variant="outline" 
-                className="font-semibold px-10 py-5" 
+                className="font-semibold px-6 py-5 md:px-10" 
                 style={{ fontSize: '12px' }}
               >
                 <Link href={secondaryCtaUrl}>

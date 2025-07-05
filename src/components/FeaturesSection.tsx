@@ -87,7 +87,7 @@ export default function FeaturesSection() {
   }, []);
 
   return (
-    <section className="py-16 bg-background dark:bg-background mt-32 mb-32">
+    <section className="py-16 bg-background dark:bg-background mt-16 mb-16 md:mt-32 md:mb-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Column - Sticky Heading */}
