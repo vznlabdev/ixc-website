@@ -85,16 +85,13 @@ const blueShades = [
 ];
 
 export default function InfiniteSlider() {
-  // Create a longer array for smoother animation
-  const extendedItems = [...sliderItems, ...sliderItems];
-  
   return (
     <div className="w-full overflow-hidden bg-background pt-12 pb-32">
       <div className="relative">
         <div className="animate-infinite-scroll flex gap-6">
-          {/* First set of items */}
-          {extendedItems.map((item, index) => (
-            <Card key={`first-${index}`} className={`flex-none w-64 h-80 hover:shadow-md transition-shadow flex flex-col ${blueShades[index % blueShades.length]}`}>
+          {/* First set */}
+          {sliderItems.map((item, index) => (
+            <Card key={`first-${index}`} className={`w-64 h-80 hover:shadow-md transition-shadow flex flex-col ${blueShades[index % blueShades.length]}`}>
               <CardHeader className="pb-3">
                 <div className="mb-2">
                   <item.icon className="w-8 h-8 text-blue-50" />
@@ -108,9 +105,9 @@ export default function InfiniteSlider() {
               </CardContent>
             </Card>
           ))}
-          {/* Duplicate set for seamless loop */}
-          {extendedItems.map((item, index) => (
-            <Card key={`second-${index}`} className={`flex-none w-64 h-80 hover:shadow-md transition-shadow flex flex-col ${blueShades[index % blueShades.length]}`}>
+          {/* Second set for seamless loop */}
+          {sliderItems.map((item, index) => (
+            <Card key={`second-${index}`} className={`w-64 h-80 hover:shadow-md transition-shadow flex flex-col ${blueShades[index % blueShades.length]}`}>
               <CardHeader className="pb-3">
                 <div className="mb-2">
                   <item.icon className="w-8 h-8 text-blue-50" />

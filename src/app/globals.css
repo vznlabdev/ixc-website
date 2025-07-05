@@ -67,10 +67,19 @@
 @layer components {
   .animate-infinite-scroll {
     animation: infinite-scroll 60s linear infinite;
-    width: calc(256px * 20 + 24px * 19); /* 20 cards * 256px width + 19 gaps * 24px */
+    width: max-content;
   }
   
   .animate-infinite-scroll:hover {
+    animation-play-state: paused;
+  }
+  
+  .animate-testimonial-scroll {
+    animation: testimonial-scroll 60s linear infinite;
+    width: max-content;
+  }
+  
+  .animate-testimonial-scroll:hover {
     animation-play-state: paused;
   }
   
@@ -79,7 +88,16 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-256px * 10 - 24px * 10)); /* Move exactly the width of 10 cards + gaps */
+      transform: translateX(-50%);
+    }
+  }
+  
+  @keyframes testimonial-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
 }

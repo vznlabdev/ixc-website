@@ -208,7 +208,7 @@ export default function TestimonialsSection() {
       {/* Testimonials Slider - Full Width */}
       <div className="w-full overflow-hidden mb-12">
           <div className="relative">
-            <div className="animate-infinite-scroll flex gap-6">
+            <div className="animate-testimonial-scroll flex gap-6">
               {/* First set of testimonials */}
               {testimonials.map((testimonial, index) => (
                 <Card key={`first-${index}`} className="flex-none w-[28rem] shadow-sm">
