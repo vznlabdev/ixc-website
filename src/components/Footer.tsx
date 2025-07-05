@@ -40,23 +40,18 @@ export default function Footer() {
             <h4 className="text-lg font-medium mb-4 text-foreground" style={{ fontSize: '.875rem' }}>Product</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/features" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/demo" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Demo
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Updates
                 </Link>
               </li>
             </ul>
@@ -66,7 +61,7 @@ export default function Footer() {
             <h4 className="text-lg font-medium mb-4 text-foreground" style={{ fontSize: '.875rem' }}>Support</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/help" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Help Center
                 </Link>
               </li>
@@ -76,13 +71,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/training" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Training
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  API Docs
                 </Link>
               </li>
             </ul>
@@ -92,23 +82,18 @@ export default function Footer() {
             <h4 className="text-lg font-medium mb-4 text-foreground" style={{ fontSize: '.875rem' }}>Company</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Privacy
                 </Link>
               </li>
             </ul>
@@ -118,17 +103,17 @@ export default function Footer() {
             <h4 className="text-lg font-medium mb-4 text-foreground" style={{ fontSize: '.875rem' }}>Legal</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                <Link href="/cookies" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Cookie Policy
                 </Link>
               </li>

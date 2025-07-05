@@ -38,11 +38,11 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            <Link href="/" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
-              Home
+            <Link href="/features" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Features
             </Link>
-            <Link href="/services" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
-              Services
+            <Link href="/pricing" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Pricing
             </Link>
             <Link href="/about" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
               About
@@ -87,18 +87,18 @@ export default function Header() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-background">
               <Link 
-                href="/" 
+                href="/features" 
                 className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 onClick={closeMobileMenu}
               >
-                Home
+                Features
               </Link>
               <Link 
-                href="/services" 
+                href="/pricing" 
                 className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 onClick={closeMobileMenu}
               >
-                Services
+                Pricing
               </Link>
               <Link 
                 href="/about" 
