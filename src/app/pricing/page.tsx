@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { CheckCircle, Star } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 
 export default function PricingPage() {
   return (
@@ -14,7 +14,7 @@ export default function PricingPage() {
               Start Free.<br className="hidden md:block" /> Upgrade When Ready
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              Choose the plan that's right for your team. Start with our free plan and upgrade as your needs grow.
+              Choose the plan that&apos;s right for your team. Start with our free plan and upgrade as your needs grow.
             </p>
           </div>
         </div>

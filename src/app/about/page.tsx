@@ -14,7 +14,7 @@ export default function AboutPage() {
               About IncoXchange
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              We're on a mission to transform how teams manage their workflows and collaborate on projects. 
+              We&apos;re on a mission to transform how teams manage their workflows and collaborate on projects. 
               Our platform empowers organizations to work smarter, not harder.
             </p>
             <div className="flex flex-row gap-3 md:gap-4 justify-center">
@@ -46,7 +46,7 @@ export default function AboutPage() {
               </p>
               <p className="text-lg text-muted-foreground mb-8">
                 Founded in 2020, IncoXchange has grown from a simple idea into a comprehensive platform 
-                trusted by thousands of teams worldwide. We're committed to continuous innovation and 
+                trusted by thousands of teams worldwide. We&apos;re committed to continuous innovation and 
                 putting our users first in everything we do.
               </p>
               <Button asChild size="lg" className="font-semibold">

@@ -87,7 +87,7 @@ export default function ApiDocsPage() {
               <CardContent>
                 <div className="bg-muted p-4 rounded-lg mb-4">
                   <code className="text-sm">
-                    curl -H "Authorization: Bearer YOUR_API_KEY" \<br />
+                    curl -H &quot;Authorization: Bearer YOUR_API_KEY&quot; \<br />
                     https://api.incoxchange.com/v1/projects
                   </code>
                 </div>

@@ -203,7 +203,7 @@ export default function CookiesPage() {
                   We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons.
                 </p>
                 <p className="text-muted-foreground">
-                  We will notify you of any material changes by posting the updated policy on our website and updating the "Last updated" date above.
+                  We will notify you of any material changes by posting the updated policy on our website and updating the &quot;Last updated&quot; date above.
                 </p>
               </CardContent>
             </Card>

@@ -47,12 +47,12 @@ export default function CareersPage() {
               {
                 icon: Zap,
                 title: "Innovation First",
-                description: "Work with cutting-edge technologies and push the boundaries of what's possible."
+                description: "Work with cutting-edge technologies and push the boundaries of what&apos;s possible."
               },
               {
                 icon: Users,
                 title: "Great Team",
-                description: "Join a diverse, talented team of individuals who support each other's growth."
+                description: "Join a diverse, talented team of individuals who support each other&apos;s growth."
               },
               {
                 icon: Target,
@@ -198,7 +198,7 @@ export default function CareersPage() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Continuous Learning</h4>
-                    <p className="text-muted-foreground">We invest in our team's growth and development.</p>
+                    <p className="text-muted-foreground">We invest in our team&apos;s growth and development.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -216,7 +216,7 @@ export default function CareersPage() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Customer Focus</h4>
-                    <p className="text-muted-foreground">Everything we do is centered around our customers' success.</p>
+                    <p className="text-muted-foreground">Everything we do is centered around our customers&apos; success.</p>
                   </div>
                 </div>
               </div>
@@ -280,8 +280,8 @@ export default function CareersPage() {
               <div className="text-center">
                 <h2 className="text-3xl font-medium mb-4">Ready to Join Us?</h2>
                 <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Don't see a position that matches your skills? We're always looking for talented individuals. 
-                  Send us your resume and let's talk about how you can contribute to our mission.
+                  Don&apos;t see a position that matches your skills? We&apos;re always looking for talented individuals. 
+                                      Send us your resume and let&apos;s talk about how you can contribute to our mission.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button asChild size="lg" className="font-semibold px-10">

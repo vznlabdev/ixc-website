@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Quote } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 interface Testimonial {
   quote: string;
@@ -221,9 +222,11 @@ export default function TestimonialsSection() {
                     </div>
                     <div className="flex items-center gap-4 mt-auto pt-6">
                       <div className="w-12 h-12 rounded-full overflow-hidden">
-                        <img 
+                        <Image 
                           src={getImageSource(index, testimonial.name)}
                           alt={testimonial.name}
+                          width={48}
+                          height={48}
                           className="w-full h-full object-cover"
                           onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                             const target = e.currentTarget;
@@ -255,9 +258,11 @@ export default function TestimonialsSection() {
                     </div>
                     <div className="flex items-center gap-4 mt-auto pt-6">
                       <div className="w-12 h-12 rounded-full overflow-hidden">
-                        <img 
+                        <Image 
                           src={getImageSource(index, testimonial.name)}
                           alt={testimonial.name}
+                          width={48}
+                          height={48}
                           className="w-full h-full object-cover"
                           onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
                             const target = e.currentTarget;

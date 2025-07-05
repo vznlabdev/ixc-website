@@ -38,7 +38,7 @@ export default function UpdatesPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-medium mb-4">Latest Release</h2>
             <p className="text-lg text-muted-foreground">
-              Check out what's new in our most recent update
+              Check out what&apos;s new in our most recent update
             </p>
           </div>
           
@@ -164,7 +164,7 @@ export default function UpdatesPage() {
             <CardContent className="p-8 text-center">
               <h2 className="text-3xl font-medium mb-4">Stay Updated</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Get notified about new features and updates as soon as they're released.
+                                  Get notified about new features and updates as soon as they&apos;re released.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="font-semibold px-10">

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Linkedin, Twitter, Facebook } from 'lucide-react'
 
 export default function Footer() {
@@ -9,9 +10,11 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-4 lg:col-span-4 md:mr-4 lg:mr-6">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               {/* Logomark */}
-              <img 
+              <Image 
                 src="/incoxchange-logomark.svg" 
                 alt="incoXchange Logo" 
+                width={24}
+                height={24}
                 className="w-6 h-6"
               />
               {/* Logo text */}

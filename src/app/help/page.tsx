@@ -162,7 +162,7 @@ export default function HelpPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-medium mb-4">Still Need Help?</h2>
             <p className="text-lg text-muted-foreground">
-              Can't find what you're looking for? Our support team is here to help.
+                              Can&apos;t find what you&apos;re looking for? Our support team is here to help.
             </p>
           </div>
           

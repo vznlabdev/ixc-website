@@ -15,7 +15,7 @@ export default function TrainingPage() {
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
               Master IncoXchange with our comprehensive training programs. From basics to advanced features, 
-              we'll help you and your team become workflow management experts.
+                              we&apos;ll help you and your team become workflow management experts.
             </p>
             <div className="flex flex-row gap-3 md:gap-4 justify-center">
               <Button asChild size="lg" className="font-semibold px-6 py-5 md:px-10">

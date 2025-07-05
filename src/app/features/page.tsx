@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { CheckCircle, Zap, Shield, Users } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 
 export default function FeaturesPage() {
   return (

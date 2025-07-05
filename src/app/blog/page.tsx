@@ -36,7 +36,7 @@ export default function BlogPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-medium mb-4">Featured Article</h2>
             <p className="text-lg text-muted-foreground">
-              Don't miss our latest insights and updates
+                              Don&apos;t miss our latest insights and updates
             </p>
           </div>
           

@@ -32,7 +32,7 @@ export default function TermsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  By accessing and using IncoXchange ("Service"), you accept and agree to be bound by the terms and provision of this agreement.
+                  By accessing and using IncoXchange (&quot;Service&quot;), you accept and agree to be bound by the terms and provision of this agreement.
                 </p>
                 <p className="text-muted-foreground">
                   If you do not agree to abide by the above, please do not use this service.
@@ -134,7 +134,7 @@ export default function TermsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-muted-foreground">
-                  The information on this website is provided on an "as is" basis. To the fullest extent permitted by law, this Company:
+                  The information on this website is provided on an &quot;as is&quot; basis. To the fullest extent permitted by law, this Company:
                 </p>
                 <ul className="space-y-2 text-muted-foreground">
                   <li>• excludes all representations and warranties relating to this website and its contents</li>

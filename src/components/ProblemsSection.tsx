@@ -22,7 +22,7 @@ const problemCards: ProblemCard[] = [
   {
     icon: Eye,
     title: "Zero Visibility",
-    description: "Is the contractor coming today? Did they finish? What actually got fixed? You're constantly playing phone tag."
+                    description: "Is the contractor coming today? Did they finish? What actually got fixed? You&apos;re constantly playing phone tag."
   },
   {
     icon: FileX,
@@ -41,7 +41,7 @@ export default function ProblemsSection() {
               The Property<br className="hidden md:block" /> Management Nightmare
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mb-6 md:mb-0" style={{ fontSize: '16px' }}>
-              Every property manager knows this pain.<br className="hidden md:block" /> It's costing you time, money, and sanity.
+                              Every property manager knows this pain.<br className="hidden md:block" /> It&apos;s costing you time, money, and sanity.
             </p>
             <div className="block md:hidden">
               <Button 

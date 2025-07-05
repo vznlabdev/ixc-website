@@ -14,7 +14,7 @@ export default function CTASection() {
                   Ready to End Contractor Chaos?
                 </h2>
                 <p className="text-lg text-primary-foreground/90 max-w-2xl" style={{ fontSize: '16px' }}>
-                  Join hundreds of property managers who've<br className="hidden md:block" /> transformed their workflow with IncoXchange
+                  Join hundreds of property managers who&apos;ve<br className="hidden md:block" /> transformed their workflow with IncoXchange
                 </p>
               </div>
               
