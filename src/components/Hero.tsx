@@ -27,7 +27,8 @@ export default function Hero({
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-tight text-foreground">
               {title || (
                 <>
-                  Stop Managing Contractors<br className="hidden md:block" /> Through Text Messages
+                The fastest way to manage<br className="hidden md:block" /> contractor work orders
+                  {/* Stop Managing Contractors<br className="hidden md:block" /> Through Text Messages */}
                 </>
               )}
             </h1>
@@ -39,27 +40,33 @@ export default function Hero({
               )}
             </p>
             <div className="flex flex-row gap-3 md:gap-4 items-start" style={{ paddingBottom: '2rem' }}>
-              <Button 
-                asChild 
-                size="lg" 
-                className="font-semibold px-6 py-5 md:px-10" 
-                style={{ fontSize: '12px' }}
-              >
-                <Link href={ctaUrl}>
-                  {ctaText}
-                </Link>
-              </Button>
-              <Button 
-                asChild 
-                size="lg" 
-                variant="outline" 
-                className="font-semibold px-6 py-5 md:px-10" 
-                style={{ fontSize: '12px' }}
-              >
-                <Link href={secondaryCtaUrl}>
-                  {secondaryCtaText}
-                </Link>
-              </Button>
+              <div className="flex flex-col items-center">
+                <Button 
+                  asChild 
+                  size="lg" 
+                  className="font-semibold px-6 py-5 md:px-10" 
+                  style={{ fontSize: '12px' }}
+                >
+                  <Link href={ctaUrl}>
+                    {ctaText}
+                  </Link>
+                </Button>
+                <p className="text-xs text-muted-foreground mt-2">No credit card</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Button 
+                  asChild 
+                  size="lg" 
+                  variant="outline" 
+                  className="font-semibold px-6 py-5 md:px-10" 
+                  style={{ fontSize: '12px' }}
+                >
+                  <Link href={secondaryCtaUrl}>
+                    {secondaryCtaText}
+                  </Link>
+                </Button>
+                <p className="text-xs text-muted-foreground mt-2">See 2-Min Demo</p>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Linkedin, Twitter, Facebook } from 'lucide-react'
+import { Linkedin, Facebook, Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -23,17 +23,17 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground mb-4">
-              Transform your Project Management Workflow
+              Simple wins.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Linkedin className="h-5 w-5 fill-current" />
+                <Linkedin className="h-5 w-5" />
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Twitter className="h-5 w-5 fill-current" />
+                <Facebook className="h-5 w-5" />
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Facebook className="h-5 w-5 fill-current" />
+                <Instagram className="h-5 w-5" />
               </Link>
             </div>
           </div>

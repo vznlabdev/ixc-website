@@ -7,9 +7,7 @@ import {
   MessageCircle, 
   TrendingUp, 
   Shield, 
-  Wrench, 
-  Search, 
-  Receipt 
+  Wrench 
 } from 'lucide-react'
 
 interface SliderItem {
@@ -26,12 +24,12 @@ const sliderItems: SliderItem[] = [
   },
   {
     icon: Smartphone,
-    title: "SMS-Powered Contractor Alerts",
+    title: "SMS Powered Contractor Alerts",
     description: "No app required. Contractors reply via mobile instantly."
   },
   {
     icon: Camera,
-    title: "Photo-Verified Documentation",
+    title: "Photo Verified Documentation",
     description: "GPS, time-stamps, and before/after photos included."
   },
   {
@@ -58,16 +56,6 @@ const sliderItems: SliderItem[] = [
     icon: Wrench,
     title: "Emergency Response Tools",
     description: "Instant contact override for urgent maintenance issues."
-  },
-  {
-    icon: Search,
-    title: "Fully Searchable Job History",
-    description: "Never lose a maintenance record again."
-  },
-  {
-    icon: Receipt,
-    title: "Instant Invoice & Completion Log",
-    description: "Contractors upload invoices and photos in one step."
   }
 ];
 
@@ -79,9 +67,7 @@ const blueShades = [
   'bg-blue-800',
   'bg-blue-900',
   'bg-blue-400',
-  'bg-blue-500',
-  'bg-blue-600',
-  'bg-blue-700'
+  'bg-blue-500'
 ];
 
 export default function InfiniteSlider() {

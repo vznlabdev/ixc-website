@@ -4,7 +4,7 @@ import { Check } from 'lucide-react'
 
 const features = [
   'Unlimited work orders',
-  'Unlimited contractors', 
+  'Invite 5 contractors', 
   'Photo documentation',
   'SMS notifications',
   'Mobile contractor access',
@@ -20,10 +20,10 @@ export default function PricingSection() {
           {/* Left Column - Sticky Heading */}
           <div className="lg:sticky lg:top-1/2 lg:-translate-y-1/2 lg:self-start">
             <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-6">
-              Start Free. <br />Upgrade When Ready.
+              Start Free. <br className="hidden md:block" />Upgrade When Ready.
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mb-6" style={{ fontSize: '16px' }}>
-              Try IncoXchange with your team and contractors. No credit card required.
+              Try IncoXchange with your team and contractors. <br className="hidden md:block" />No credit card required.
             </p>
           </div>
           
@@ -42,7 +42,7 @@ export default function PricingSection() {
               </p>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="space-y-3">
+              <div className="space-y-3 mb-6">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
@@ -53,7 +53,7 @@ export default function PricingSection() {
                 ))}
               </div>
               
-              <Button className="w-full mt-6" size="lg">
+              <Button className="w-full mt-20" size="lg">
                 Start Free Today
               </Button>
               
