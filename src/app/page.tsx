@@ -8,6 +8,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
+import { pageContent } from "@/content/pages";
 
 export default function Home() {
   return (
@@ -21,7 +22,13 @@ export default function Home() {
       <TestimonialsSection />
       <PricingSection />
       <FAQSection />
-      <CTASection />
+      <CTASection 
+        title={pageContent.home.cta.title}
+        description={pageContent.home.cta.description}
+        buttonText={pageContent.home.cta.buttonText}
+        buttonUrl={pageContent.home.cta.buttonUrl}
+        smallText={pageContent.home.cta.smallText}
+      />
     </div>
   );
 }

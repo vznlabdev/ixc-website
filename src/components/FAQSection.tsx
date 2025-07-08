@@ -7,7 +7,7 @@ import {
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
-const faqData = [
+const defaultFaqData = [
   {
     question: "What is IncoXchange?",
     answer: "IncoXchange is a work order management platform for property managers. Create work orders with photos, assign to contractors via text, track everything in real time."
@@ -50,7 +50,14 @@ const faqData = [
   }
 ]
 
-export default function FAQSection() {
+interface FAQSectionProps {
+  faqData?: Array<{
+    question: string
+    answer: string
+  }>
+}
+
+export default function FAQSection({ faqData = defaultFaqData }: FAQSectionProps) {
   return (
     <section className="py-16 lg:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
