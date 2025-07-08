@@ -1,21 +1,60 @@
+"use client"
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Mail, Phone, MapPin } from 'lucide-react'
+import PageHeader from '@/components/PageHeader'
+import { pageContent } from '@/content/pages'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
+
+const formSchema = z.object({
+  firstName: z.string().min(2, {
+    message: "First name must be at least 2 characters.",
+  }),
+  lastName: z.string().min(2, {
+    message: "Last name must be at least 2 characters.",
+  }),
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+  company: z.string().optional(),
+  subject: z.string().min(5, {
+    message: "Subject must be at least 5 characters.",
+  }),
+  message: z.string().min(10, {
+    message: "Message must be at least 10 characters.",
+  }),
+  attachments: z.any().optional(),
+})
 
 export default function ContactPage() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      company: "",
+      subject: "",
+      message: "",
+    },
+  })
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values)
+    // Handle form submission here
+  }
   return (
-    <div className="py-16 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
-            Get in Touch
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to transform your business? We&apos;d love to hear from you.
-          </p>
-        </div>
+    <>
+      <PageHeader {...pageContent.contact.header} showButtons={false} />
+      
+      <div className="py-16 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
@@ -27,54 +66,126 @@ export default function ContactPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-1">
-                      First Name
-                    </label>
-                    <Input id="firstName" name="firstName" type="text" required />
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="firstName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>First Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="John" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="lastName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Last Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Doe" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
                   </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-1">
-                      Last Name
-                    </label>
-                    <Input id="lastName" name="lastName" type="text" required />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">
-                    Email
-                  </label>
-                  <Input id="email" name="email" type="email" required />
-                </div>
-                
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-foreground mb-1">
-                    Company
-                  </label>
-                  <Input id="company" name="company" type="text" />
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-1">
-                    Subject
-                  </label>
-                  <Input id="subject" name="subject" type="text" required />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-1">
-                    Message
-                  </label>
-                  <Textarea id="message" name="message" rows={4} required />
-                </div>
-                
-                <Button type="submit" className="w-full">
-                  Send Message
-                </Button>
-              </form>
+                  
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input placeholder="john.doe@example.com" type="email" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="company"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Company</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Your company (optional)" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="subject"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Subject</FormLabel>
+                        <FormControl>
+                          <Input placeholder="How can we help you?" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Message</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Tell us more about your needs..."
+                            rows={4}
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
+                    name="attachments"
+                    render={({ field: { onChange, ...fieldProps } }) => (
+                      <FormItem>
+                        <FormLabel>Attachments</FormLabel>
+                        <FormControl>
+                          <Input
+                            {...fieldProps}
+                            type="file"
+                            multiple
+                            onChange={(event) =>
+                              onChange(event.target.files && event.target.files[0])
+                            }
+                          />
+                        </FormControl>
+                        <FormDescription>
+                          You can attach multiple files (max 10MB each)
+                        </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <Button type="submit" className="w-full">
+                    Send Message
+                  </Button>
+                </form>
+              </Form>
             </CardContent>
           </Card>
 
@@ -92,7 +203,7 @@ export default function ContactPage() {
                   <Mail className="h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <p className="text-muted-foreground">contact@incoxchange.com</p>
+                    <p className="text-muted-foreground">support@incoxchange.com</p>
                   </div>
                 </div>
                 
@@ -100,7 +211,7 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium text-foreground">Phone</p>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+1 (303) 799-1732</p>
                   </div>
                 </div>
                 
@@ -109,9 +220,9 @@ export default function ContactPage() {
                   <div>
                     <p className="font-medium text-foreground">Address</p>
                     <p className="text-muted-foreground">
-                      123 Business Street<br />
-                      Suite 100<br />
-                      New York, NY 10001
+                      8084 S Wallace Ct<br />
+                      Suite A<br />
+                      Englewood, CO 80112
                     </p>
                   </div>
                 </div>
@@ -120,7 +231,7 @@ export default function ContactPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Business Hours</CardTitle>
+                <CardTitle>Support Hours</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
@@ -141,7 +252,8 @@ export default function ContactPage() {
             </Card>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </>
   )
 } 

@@ -283,6 +283,16 @@ export const pageContent = {
       }
     ]
   },
+  contact: {
+    header: {
+      title: "Get in Touch",
+      subtitle: "Need help? Want a demo? Just saying hi? We'd love to hear from you.",
+      primaryButtonText: "Schedule Demo",
+      primaryButtonUrl: "/demo",
+      secondaryButtonText: "View Features",
+      secondaryButtonUrl: "/features"
+    }
+  },
   home: {
     cta: {
       title: "Ready to End Contractor Chaos?",

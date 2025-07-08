@@ -50,6 +50,9 @@ export default function Header() {
             <Link href="/about" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
               About
             </Link>
+            <Link href="/careers" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Careers
+            </Link>
             <Link href="/blog" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Blog
             </Link>
@@ -109,6 +112,13 @@ export default function Header() {
                 onClick={closeMobileMenu}
               >
                 About
+              </Link>
+              <Link 
+                href="/careers" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Careers
               </Link>
               <Link 
                 href="/blog" 
