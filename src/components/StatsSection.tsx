@@ -29,16 +29,16 @@ export default function StatsSection() {
             <div className="flex flex-wrap gap-8 md:gap-12 justify-center">
               {metrics.map((metric, index) => (
                 <div key={index} className="text-left min-w-[140px]">
-                  <div className="text-4xl md:text-5xl font-medium text-white mb-2">
+                  <div className="text-4xl md:text-5xl font-medium mb-2" style={{ color: '#ffffff' }}>
                     {metric.percentage}
                   </div>
-                  <p className="text-primary-100 text-sm">
+                  <p className="text-sm" style={{ color: '#ffffff' }}>
                     {metric.description}
                   </p>
                 </div>
               ))}
             </div>
-            <p className="text-primary-100 mt-8 text-center" style={{ fontSize: '14px' }}>
+            <p className="mt-8 text-center" style={{ fontSize: '14px', color: '#ffffff' }}>
               Property managers using IncoXchange see immediate improvements
             </p>
           </CardContent>
