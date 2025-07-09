@@ -43,6 +43,8 @@ export default function Hero({
 }: HeroProps) {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false]);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [isWordVisible, setIsWordVisible] = useState(true);
   const heroRef = useRef<HTMLDivElement>(null);
 
   // Global mouse move handler for 3D effect
@@ -67,21 +69,30 @@ export default function Hero({
     };
   }, []);
 
-  // Infinite card rotation animation
+  // Infinite card rotation animation and word animation
   useEffect(() => {
     let currentIndex = 0;
     
     // Show first card after initial delay
     const initialTimer = setTimeout(() => {
       setVisibleCards([true, false, false]);
+      setIsWordVisible(true);
     }, 500);
 
     // Cycle through cards infinitely
     const interval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % featureCards.length;
-      const newVisible = [false, false, false];
-      newVisible[currentIndex] = true;
-      setVisibleCards(newVisible);
+      // Fade out current word
+      setIsWordVisible(false);
+      
+      // After fade out, change the word and fade in
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % featureCards.length;
+        const newVisible = [false, false, false];
+        newVisible[currentIndex] = true;
+        setVisibleCards(newVisible);
+        setCurrentWordIndex(currentIndex);
+        setIsWordVisible(true);
+      }, 350); // Half of the transition duration
     }, 5000); // Change card every 5 seconds
 
     return () => {
@@ -102,7 +113,19 @@ export default function Hero({
             <div className="flex-1 w-full text-left max-w-2xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-tight text-foreground">
                 {title || (
-                  <>The fastest way to manage contractor work orders</>
+                  <>The <span
+                    className={`italic inline-block transition-all duration-700 ease-out ${
+                      isWordVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                    }`}
+                    style={{
+                      minWidth: '120px',
+                      color: '#bcdcff',
+                    }}
+                  >
+                    {currentWordIndex === 0 && 'fastest'}
+                    {currentWordIndex === 1 && 'easiest'}
+                    {currentWordIndex === 2 && 'simplest'}
+                  </span><br />way to manage contractor work orders.<span role="img" aria-label="smiling face with heart">🥰</span></>
                 )}
               </h1>
               <p className="mb-10 max-w-4xl text-muted-foreground leading-relaxed" style={{ fontSize: '16px' }}>
