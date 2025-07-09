@@ -119,7 +119,7 @@ export default function Hero({
                     }`}
                     style={{
                       minWidth: '120px',
-                      color: '#bcdcff',
+                      color: 'var(--animated-word-color, #1e40af)',
                     }}
                   >
                     {currentWordIndex === 0 && 'fastest'}
