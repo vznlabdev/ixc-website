@@ -2,6 +2,7 @@ import PageHeader from '@/components/PageHeader'
 import { Badge } from '@/components/ui/badge'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function BlogPage() {
   return (
@@ -66,7 +67,7 @@ export default function BlogPage() {
                   {/* Blog Banner Image */}
                   <Link href="#article-1" className="block">
                     <div className="aspect-video bg-muted rounded-lg mb-6 flex items-center justify-center overflow-hidden hover:opacity-90 transition-opacity">
-                      <img src="/blog-banner-default.jpg" alt="Blog Banner" className="object-cover w-full h-full" />
+                      <Image src="/blog-banner-default.jpg" alt="Blog Banner" width={800} height={450} className="object-cover w-full h-full" />
                     </div>
                   </Link>
                   
@@ -142,7 +143,7 @@ export default function BlogPage() {
                         {/* Article Image */}
                         <Link href={`#article-${i + 2}`} className="block">
                           <div className="aspect-video bg-muted rounded-lg flex items-center justify-center overflow-hidden hover:opacity-90 transition-opacity">
-                            <img src="/blog-banner-default.jpg" alt="Article Banner" className="object-cover w-full h-full" />
+                            <Image src="/blog-banner-default.jpg" alt="Article Banner" width={800} height={450} className="object-cover w-full h-full" />
                           </div>
                         </Link>
                         

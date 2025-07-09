@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import Link from 'next/link'
+import { Briefcase, Users, Wrench } from 'lucide-react'
 
 interface TabContent {
   title: string
@@ -87,14 +88,22 @@ export default function GetStartedSection() {
           </Button>
         </div>
         
-        {/* Tabs Section */}
+        {/* Large shadcn Tabs Section */}
         <Tabs defaultValue="business" className="w-full">
-          <TabsList className="mb-8 bg-muted">
-            <TabsTrigger value="business" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">For Business Owners</TabsTrigger>
-            <TabsTrigger value="employees" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">For Employees</TabsTrigger>
-            <TabsTrigger value="contractors" className="data-[state=active]:bg-blue-600 data-[state=active]:text-white">For Contractors</TabsTrigger>
+          <TabsList className="mb-8 inline-flex w-auto gap-4 rounded-lg items-stretch justify-start h-auto">
+            <TabsTrigger value="business" className="flex items-center gap-2 px-6 py-4 h-auto text-base font-medium rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:bg-muted data-[state=inactive]:text-foreground">
+              <Briefcase className="w-5 h-5" />
+              For Business Owners
+            </TabsTrigger>
+            <TabsTrigger value="employees" className="flex items-center gap-2 px-6 py-4 h-auto text-base font-medium rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:bg-muted data-[state=inactive]:text-foreground">
+              <Users className="w-5 h-5" />
+              For Employees
+            </TabsTrigger>
+            <TabsTrigger value="contractors" className="flex items-center gap-2 px-6 py-4 h-auto text-base font-medium rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:bg-muted data-[state=inactive]:text-foreground">
+              <Wrench className="w-5 h-5" />
+              For Contractors
+            </TabsTrigger>
           </TabsList>
-          
           <TabsContent value="business">
             <div className="grid gap-6 md:gap-8 lg:grid-cols-3">
               {businessOwnerContent.map((item, index) => (
@@ -118,7 +127,6 @@ export default function GetStartedSection() {
               ))}
             </div>
           </TabsContent>
-          
           <TabsContent value="employees">
             <div className="grid gap-6 md:gap-8 lg:grid-cols-3">
               {employeeContent.map((item, index) => (
@@ -142,7 +150,6 @@ export default function GetStartedSection() {
               ))}
             </div>
           </TabsContent>
-          
           <TabsContent value="contractors">
             <div className="grid gap-6 md:gap-8 lg:grid-cols-3">
               {contractorContent.map((item, index) => (

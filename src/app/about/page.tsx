@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import PageHeader from '@/components/PageHeader'
 import CTASection from '@/components/CTASection'
+import StatsSection from '@/components/StatsSection'
 import { pageContent } from '@/content/pages'
 
 export default function AboutPage() {
@@ -52,24 +53,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* By the Numbers */}
-      <section className="py-16 bg-background dark:bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-medium text-foreground mb-8">By the Numbers</h2>
-          <div className="flex flex-wrap gap-8 md:gap-12 justify-center md:justify-start">
-            {pageContent.about.stats.map((stat, index) => (
-              <div key={index} className="text-left">
-                <div className="text-4xl md:text-5xl font-medium text-primary mb-2">
-                  {stat.number}
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsSection />
 
       {/* Team Section */}
       <section className="py-16 lg:py-24 bg-background">

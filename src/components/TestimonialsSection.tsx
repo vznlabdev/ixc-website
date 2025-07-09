@@ -12,11 +12,6 @@ interface Testimonial {
   units: string;
 }
 
-interface Metric {
-  percentage: string;
-  description: string;
-}
-
 const testimonials: Testimonial[] = [
   {
     quote: "I used to spend 2 hours a day just tracking down contractors. Now I know the status of every job at a glance. IncoXchange saved my sanity.",
@@ -68,25 +63,6 @@ const testimonials: Testimonial[] = [
   }
 ];
 
-const metrics: Metric[] = [
-  {
-    percentage: "Unlimited",
-    description: "Work Orders"
-  },
-  {
-    percentage: "Zero",
-    description: "Training Required"
-  },
-  {
-    percentage: "3",
-    description: "Simple Steps"
-  },
-  {
-    percentage: "100%",
-    description: "Free to Start"
-  }
-];
-
 // Helper function to get the appropriate image source for testimonials
 const getImageSource = (index: number, name: string) => {
   const firstName = name.split(' ')[0].toLowerCase();
@@ -103,20 +79,6 @@ const getImageSource = (index: number, name: string) => {
 const getFallbackImageSource = (index: number) => {
   const fallbackPhotos = ['sarah', 'mike', 'lisa', 'david', 'jennifer', 'robert', 'maria', 'james'];
   return `/${fallbackPhotos[index % fallbackPhotos.length]}.png`;
-};
-
-// Animated metric component
-const AnimatedMetric = ({ percentage, description }: { percentage: string, description: string }) => {
-  return (
-    <div className="text-left">
-      <div className="text-4xl md:text-5xl font-medium text-primary mb-2">
-        {percentage}
-      </div>
-      <p className="text-muted-foreground text-sm">
-        {description}
-      </p>
-    </div>
-  );
 };
 
 export default function TestimonialsSection() {
@@ -217,22 +179,6 @@ export default function TestimonialsSection() {
             </div>
           </div>
         </div>
-
-      {/* Metrics */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap gap-8 md:gap-12">
-          {metrics.map((metric, index) => (
-            <AnimatedMetric
-              key={index}
-              percentage={metric.percentage}
-              description={metric.description}
-            />
-          ))}
-        </div>
-        <p className="text-white mt-8" style={{ fontSize: '14px' }}>
-          Property managers using IncoXchange see immediate improvements
-        </p>
-      </div>
     </section>
   )
 } 

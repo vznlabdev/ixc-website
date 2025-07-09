@@ -69,13 +69,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Contact Us
+                <Link href="/training" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                  Training
                 </Link>
               </li>
               <li>
-                <Link href="/training" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Training
+                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                  Contact Us
                 </Link>
               </li>
             </ul>

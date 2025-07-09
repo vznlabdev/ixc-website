@@ -5,6 +5,7 @@ import ProblemsSection from "@/components/ProblemsSection";
 import SolutionsSection from "@/components/SolutionsSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
@@ -19,6 +20,7 @@ export default function Home() {
       <SolutionsSection />
       <FeaturesSection />
       <HowItWorksSection />
+      <StatsSection />
       <TestimonialsSection />
       <PricingSection />
       <FAQSection />
