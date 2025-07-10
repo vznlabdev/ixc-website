@@ -70,7 +70,7 @@ export default function GetStartedSection() {
   return (
     <section className="bg-background py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading and Button Row */}
+        {/* Heading and Button */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
           <h2 className="text-3xl md:text-4xl font-medium mb-6 lg:mb-0 text-foreground">
             Get Started in 5 Minutes
@@ -79,7 +79,7 @@ export default function GetStartedSection() {
           <Button 
             asChild 
             size="lg" 
-            className="font-semibold px-6 py-5 md:px-10"
+            className="font-semibold px-6 py-5 md:px-10 w-fit lg:w-auto"
             style={{ fontSize: '12px' }}
           >
             <Link href="/contact">
@@ -90,18 +90,18 @@ export default function GetStartedSection() {
         
         {/* Large shadcn Tabs Section */}
         <Tabs defaultValue="business" className="w-full">
-          <TabsList className="mb-8 inline-flex w-auto gap-4 rounded-lg items-stretch justify-start h-auto">
-            <TabsTrigger value="business" className="flex items-center gap-2 px-6 py-4 h-auto text-base font-medium rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:bg-muted data-[state=inactive]:text-foreground">
-              <Briefcase className="w-5 h-5" />
-              For Business Owners
+          <TabsList className="mb-8 w-full sm:w-auto sm:inline-flex grid grid-cols-1 gap-2 sm:gap-4 rounded-lg items-stretch justify-start h-auto">
+            <TabsTrigger value="business" className="flex items-center justify-center sm:justify-start gap-2 px-3 py-3 sm:px-6 sm:py-4 h-auto text-sm sm:text-base font-medium rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:bg-muted data-[state=inactive]:text-foreground">
+              <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">For </span>Business Owners
             </TabsTrigger>
-            <TabsTrigger value="employees" className="flex items-center gap-2 px-6 py-4 h-auto text-base font-medium rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:bg-muted data-[state=inactive]:text-foreground">
-              <Users className="w-5 h-5" />
-              For Employees
+            <TabsTrigger value="employees" className="flex items-center justify-center sm:justify-start gap-2 px-3 py-3 sm:px-6 sm:py-4 h-auto text-sm sm:text-base font-medium rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:bg-muted data-[state=inactive]:text-foreground">
+              <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">For </span>Employees
             </TabsTrigger>
-            <TabsTrigger value="contractors" className="flex items-center gap-2 px-6 py-4 h-auto text-base font-medium rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:bg-muted data-[state=inactive]:text-foreground">
-              <Wrench className="w-5 h-5" />
-              For Contractors
+            <TabsTrigger value="contractors" className="flex items-center justify-center sm:justify-start gap-2 px-3 py-3 sm:px-6 sm:py-4 h-auto text-sm sm:text-base font-medium rounded-md data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:bg-muted data-[state=inactive]:text-foreground">
+              <Wrench className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="hidden sm:inline">For </span>Contractors
             </TabsTrigger>
           </TabsList>
           <TabsContent value="business">

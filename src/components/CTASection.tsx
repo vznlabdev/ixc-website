@@ -28,8 +28,8 @@ export default function CTASection({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="shadow-lg border bg-primary">
           <CardContent className="p-8">
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between">
-              <div className="text-left mb-6 md:mb-0">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
+              <div className="text-left mb-6 lg:mb-0">
                 <h2 className="text-3xl md:text-4xl font-medium text-primary-foreground mb-4">
                   {title}
                   {titleBreak && (
@@ -44,7 +44,7 @@ export default function CTASection({
                 </p>
               </div>
               
-              <div className="flex flex-col items-start md:items-end">
+              <div className="flex flex-col items-start lg:items-end">
                 <div className="flex flex-col sm:flex-row gap-3 mb-2">
                   <Button 
                     asChild 
@@ -69,7 +69,7 @@ export default function CTASection({
                     </Button>
                   )}
                 </div>
-                <p className="text-sm text-primary-foreground/80 text-left md:text-right">
+                <p className="text-sm text-primary-foreground/80 text-left lg:text-right">
                   {smallText}
                 </p>
               </div>

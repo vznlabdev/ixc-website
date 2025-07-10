@@ -85,8 +85,8 @@ export default function TestimonialsSection() {
   return (
     <section className="py-16 bg-background dark:bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-12">
-          <div className="text-left mb-6 md:mb-0">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-12">
+          <div className="text-left mb-6 lg:mb-0">
             <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               The Results <br className="hidden md:block" />Speak for Themselves
             </h2>
@@ -94,7 +94,7 @@ export default function TestimonialsSection() {
               See what your peers are saying about their workflow transformation
             </p>
           </div>
-          <Button className="self-start md:self-auto">
+          <Button className="self-start lg:self-auto">
             Start Free
           </Button>
         </div>

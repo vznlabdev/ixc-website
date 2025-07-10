@@ -40,7 +40,7 @@ export default function Header() {
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-8">
             <Link href="/features" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Features
             </Link>
@@ -57,6 +57,19 @@ export default function Header() {
               Blog
             </Link>
             <Link href="/contact" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Contact
+            </Link>
+          </nav>
+          
+          {/* Tablet Navigation - Reduced Links */}
+          <nav className="hidden md:flex lg:hidden space-x-6">
+            <Link href="/features" className="text-muted-foreground hover:text-foreground px-2 py-2 rounded-md text-sm font-medium transition-colors">
+              Features
+            </Link>
+            <Link href="/pricing" className="text-muted-foreground hover:text-foreground px-2 py-2 rounded-md text-sm font-medium transition-colors">
+              Pricing
+            </Link>
+            <Link href="/contact" className="text-muted-foreground hover:text-foreground px-2 py-2 rounded-md text-sm font-medium transition-colors">
               Contact
             </Link>
           </nav>

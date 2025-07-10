@@ -30,15 +30,15 @@ export default function SolutionsSection() {
   return (
     <section className="py-16 bg-background dark:bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-12">
-          <div className="text-left mb-6 md:mb-0">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-12">
+          <div className="text-left mb-6 lg:mb-0">
             <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               One Platform.<br className="hidden md:block" /> Complete Control.
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mb-6 md:mb-0" style={{ fontSize: '16px' }}>
+            <p className="text-lg text-muted-foreground max-w-2xl mb-6 lg:mb-0" style={{ fontSize: '16px' }}>
               IncoXchange transforms contractor coordination from chaos to clarity.<br className="hidden md:block" /> No more guessing, no more lost information.
             </p>
-            <div className="block md:hidden">
+            <div className="block lg:hidden">
               <Button 
                 asChild 
                 size="lg" 
@@ -51,7 +51,7 @@ export default function SolutionsSection() {
               </Button>
             </div>
           </div>
-          <div className="hidden md:block flex-shrink-0 md:ml-8">
+          <div className="hidden lg:block flex-shrink-0 lg:ml-8">
             <Button 
               asChild 
               size="lg" 
