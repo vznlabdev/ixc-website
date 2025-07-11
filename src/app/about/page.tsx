@@ -41,8 +41,8 @@ export default function AboutPage() {
               </p>
               <div className="aspect-video rounded-lg overflow-hidden">
                 <Image 
-                  src="/about-placeholder.jpg"
-                  alt="About IncoXchange - Our Mission"
+                  src="/property-manager-with-contractor.jpg"
+                  alt="Property Manager with Contractor - IncoXchange Mission"
                   width={800}
                   height={450}
                   className="w-full h-full object-cover"
