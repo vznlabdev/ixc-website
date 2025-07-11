@@ -98,7 +98,7 @@ export default function StatsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="shadow-lg border-2 border-blue-600 bg-background">
           <CardContent className="px-12 pt-6 pb-8">
-            <h3 className="text-xl font-medium text-blue-400 mb-8 text-left">
+            <h3 className="text-xl font-medium text-blue-800 dark:text-blue-400 mb-8 text-left">
               Property managers using IncoXchange see immediate improvements
             </h3>
             <div className="flex justify-between items-start">
@@ -107,7 +107,7 @@ export default function StatsSection() {
                   <div className="text-3xl md:text-4xl font-medium mb-2 text-primary">
                     {formatDisplayValue(metric, animatedValues[index])}
                   </div>
-                  <p className="text-sm text-blue-400">
+                  <p className="text-sm text-blue-800 dark:text-blue-400">
                     {metric.description}
                   </p>
                 </div>
