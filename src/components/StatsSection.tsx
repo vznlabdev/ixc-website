@@ -97,13 +97,13 @@ export default function StatsSection() {
     <section ref={sectionRef} className="py-16 bg-background dark:bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="shadow-lg border-2 border-blue-600 bg-background">
-          <CardContent className="px-12 pt-6 pb-8">
+          <CardContent className="px-6 sm:px-12 pt-6 pb-8">
             <h3 className="text-xl font-medium text-blue-800 dark:text-blue-400 mb-8 text-left">
               Property managers using IncoXchange see immediate improvements
             </h3>
-            <div className="flex justify-between items-start">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:flex lg:justify-between lg:items-start">
               {metrics.map((metric, index) => (
-                <div key={index} className="text-left flex-1">
+                <div key={index} className="text-left">
                   <div className="text-3xl md:text-4xl font-medium mb-2 text-primary">
                     {formatDisplayValue(metric, animatedValues[index])}
                   </div>
