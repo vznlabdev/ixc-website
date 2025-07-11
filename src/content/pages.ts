@@ -95,16 +95,18 @@ export const pageContent = {
     ],
     plans: [
       {
-        name: "Free",
-        description: "Perfect for getting started",
+        name: "Free Forever",
+        description: "Everything you need to get started",
         price: "$0",
         period: "/month",
         features: [
-          "Up to 5 properties",
-          "5 contractors",
-          "Basic work orders",
+          "Unlimited work orders",
+          "Invite 5 contractors",
+          "Photo documentation",
           "SMS notifications",
-          "Photo documentation"
+          "Mobile contractor access",
+          "Basic analytics",
+          "Email support"
         ],
         buttonText: "Get Started",
         buttonUrl: "/contact",
