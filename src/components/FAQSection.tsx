@@ -21,7 +21,7 @@ const defaultFaqData = [
     answer: "Every job creates a digital paper trail: Timestamped status changes, photos and invoices attached, costs tracked by property/contractor/type, one click export of reports/spreadsheets."
   },
   {
-    question: "What if my contractors aren&apos;t tech savvy?",
+    question: "What if my contractors aren't tech savvy?",
     answer: "If they can text, they can use IncoXchange. No passwords (login with phone number), no apps, no training."
   },
   {
