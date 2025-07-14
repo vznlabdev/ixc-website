@@ -54,10 +54,11 @@ interface FAQSectionProps {
   faqData?: Array<{
     question: string
     answer: string
-  }>
+  }>,
+  subtitle?: string
 }
 
-export default function FAQSection({ faqData = defaultFaqData }: FAQSectionProps) {
+export default function FAQSection({ faqData = defaultFaqData, subtitle }: FAQSectionProps) {
   return (
     <section className="py-16 lg:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +69,11 @@ export default function FAQSection({ faqData = defaultFaqData }: FAQSectionProps
               Frequently Asked <br className="hidden md:block" />Questions
             </h2>
             <p className="text-lg text-muted-foreground max-w-xl mb-8" style={{ fontSize: '16px' }}>
-              Everything you need to know about IncoXchange. <br className="hidden md:block" />Can&apos;t find what you&apos;re looking for? Contact our support team.
+              {subtitle || (
+                <>
+                  Everything you need to know about IncoXchange. <br className="hidden md:block" />Can&apos;t find what you&apos;re looking for? Contact our support team.
+                </>
+              )}
             </p>
             <Button 
               asChild 
@@ -81,7 +86,6 @@ export default function FAQSection({ faqData = defaultFaqData }: FAQSectionProps
               </Link>
             </Button>
           </div>
-          
           {/* Right Column - Accordion */}
           <div>
             <Accordion type="single" collapsible className="w-full">

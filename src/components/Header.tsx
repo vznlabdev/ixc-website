@@ -44,17 +44,17 @@ export default function Header() {
             <Link href="/features" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Features
             </Link>
+            <Link href="/cashflow" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              Cashflow
+            </Link>
             <Link href="/pricing" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Pricing
             </Link>
             <Link href="/about" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
               About
             </Link>
-            <Link href="/careers" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
-              Careers
-            </Link>
-            <Link href="/blog" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
-              Blog
+            <Link href="/news" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
+              News
             </Link>
             <Link href="/contact" className="text-muted-foreground hover:text-foreground px-3 py-2 rounded-md text-sm font-medium transition-colors">
               Contact
@@ -65,6 +65,9 @@ export default function Header() {
           <nav className="hidden md:flex lg:hidden space-x-6">
             <Link href="/features" className="text-muted-foreground hover:text-foreground px-2 py-2 rounded-md text-sm font-medium transition-colors">
               Features
+            </Link>
+            <Link href="/cashflow" className="text-muted-foreground hover:text-foreground px-2 py-2 rounded-md text-sm font-medium transition-colors">
+              Cashflow
             </Link>
             <Link href="/pricing" className="text-muted-foreground hover:text-foreground px-2 py-2 rounded-md text-sm font-medium transition-colors">
               Pricing
@@ -113,6 +116,13 @@ export default function Header() {
                 Features
               </Link>
               <Link 
+                href="/cashflow" 
+                className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                onClick={closeMobileMenu}
+              >
+                Cashflow
+              </Link>
+              <Link 
                 href="/pricing" 
                 className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 onClick={closeMobileMenu}
@@ -127,18 +137,11 @@ export default function Header() {
                 About
               </Link>
               <Link 
-                href="/careers" 
+                href="/news" 
                 className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 onClick={closeMobileMenu}
               >
-                Careers
-              </Link>
-              <Link 
-                href="/blog" 
-                className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-                onClick={closeMobileMenu}
-              >
-                Blog
+                News
               </Link>
               <Link 
                 href="/contact" 

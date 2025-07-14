@@ -56,18 +56,25 @@ const sliderItems: SliderItem[] = [
     icon: Wrench,
     title: "Emergency Response Tools",
     description: "Instant contact override for urgent maintenance issues."
+  },
+  // New card
+  {
+    icon: Wrench,
+    title: "Pay On Time",
+    description: "Maintain job momentum with fast, same day contractor payments."
   }
 ];
 
-const blueShades = [
-  'bg-blue-400',
-  'bg-blue-500', 
-  'bg-blue-600',
-  'bg-blue-700',
-  'bg-blue-800',
-  'bg-blue-900',
-  'bg-blue-400',
-  'bg-blue-500'
+const cardColors = [
+  { bg: '#daebff', text: '#142557' },
+  { bg: '#bcdcff', text: '#142557' },
+  { bg: '#8fc7ff', text: '#142557' },
+  { bg: '#5aa7ff', text: '#eef6ff' },
+  { bg: '#3384fe', text: '#eef6ff' },
+  { bg: '#2a6df4', text: '#eef6ff' },
+  { bg: '#154ee0', text: '#eef6ff' },
+  { bg: '#1840b5', text: '#eef6ff' },
+  { bg: '#193a8f', text: '#eef6ff' },
 ];
 
 export default function InfiniteSlider() {
@@ -77,15 +84,15 @@ export default function InfiniteSlider() {
         <div className="animate-infinite-scroll flex gap-6">
           {/* First set */}
           {sliderItems.map((item, index) => (
-            <Card key={`first-${index}`} className={`w-64 h-80 hover:shadow-md transition-shadow flex flex-col ${blueShades[index % blueShades.length]}`}>
+            <Card key={`first-${index}`} className="w-64 h-80 hover:shadow-md transition-shadow flex flex-col" style={{ backgroundColor: cardColors[index % cardColors.length].bg }}>
               <CardHeader className="pb-3">
                 <div className="mb-2">
-                  <item.icon className="w-8 h-8 text-blue-50" />
+                  <span style={{ color: cardColors[index % cardColors.length].text }}><item.icon className="w-8 h-8" /></span>
                 </div>
-                <CardTitle className="text-base font-medium text-blue-50" style={{ fontSize: '1.5rem' }}>{item.title}</CardTitle>
+                <CardTitle className="text-base font-medium text-blue-50" style={{ fontSize: '1.5rem', color: cardColors[index % cardColors.length].text }}>{item.title}</CardTitle>
               </CardHeader>
               <CardContent className="pt-0 flex-1 flex items-end">
-                <p className="text-blue-50 leading-relaxed" style={{ fontSize: '14px' }}>
+                <p className="text-blue-50 leading-relaxed" style={{ fontSize: '14px', color: cardColors[index % cardColors.length].text }}>
                   {item.description}
                 </p>
               </CardContent>
@@ -93,15 +100,15 @@ export default function InfiniteSlider() {
           ))}
           {/* Second set for seamless loop */}
           {sliderItems.map((item, index) => (
-            <Card key={`second-${index}`} className={`w-64 h-80 hover:shadow-md transition-shadow flex flex-col ${blueShades[index % blueShades.length]}`}>
+            <Card key={`second-${index}`} className="w-64 h-80 hover:shadow-md transition-shadow flex flex-col" style={{ backgroundColor: cardColors[index % cardColors.length].bg }}>
               <CardHeader className="pb-3">
                 <div className="mb-2">
-                  <item.icon className="w-8 h-8 text-blue-50" />
+                  <span style={{ color: cardColors[index % cardColors.length].text }}><item.icon className="w-8 h-8" /></span>
                 </div>
-                <CardTitle className="text-base font-medium text-blue-50" style={{ fontSize: '1.5rem' }}>{item.title}</CardTitle>
+                <CardTitle className="text-base font-medium text-blue-50" style={{ fontSize: '1.5rem', color: cardColors[index % cardColors.length].text }}>{item.title}</CardTitle>
               </CardHeader>
               <CardContent className="pt-0 flex-1 flex items-end">
-                <p className="text-blue-50 leading-relaxed" style={{ fontSize: '14px' }}>
+                <p className="text-blue-50 leading-relaxed" style={{ fontSize: '14px', color: cardColors[index % cardColors.length].text }}>
                   {item.description}
                 </p>
               </CardContent>

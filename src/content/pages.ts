@@ -172,14 +172,14 @@ export const pageContent = {
         bio: "Serial entrepreneur obsessed with solving complex problems that actually matter."
       },
       {
+        name: "Zach Lane",
+        role: "Chief Legal Officer",
+        bio: "Tech savvy financial executive dedicated to innovation and delivering exceptional customer experiences."
+      },
+      {
         name: "Jeff Gordon",
         role: "CTO",
         bio: "Former Intuit engineer passionate about building software that people actually want to use."
-      },
-      {
-        name: "Zach Lane",
-        role: "Chief Legal Officer",
-        bio: "Tech savvy attorney dedicated to protecting innovation and keeping our customers compliant."
       },
       {
         name: "Keylan Butler",

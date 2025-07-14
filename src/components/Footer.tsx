@@ -48,6 +48,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/cashflow" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                  Cashflow
+                </Link>
+              </li>
+              <li>
                 <Link href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   Pricing
                 </Link>

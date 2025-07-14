@@ -15,7 +15,14 @@ interface HeroProps {
   secondaryCtaUrl?: string
 }
 
+const headlineWords = ['fastest', 'easiest', 'simplest'];
+
 const featureCards = [
+  {
+    emoji: '💳',
+    title: 'Instant Payments.',
+    description: 'Send contractor payouts the same day without delays or payment confusion.'
+  },
   {
     emoji: '📦',
     title: 'All inclusive.',
@@ -42,7 +49,7 @@ export default function Hero({
   secondaryCtaUrl = "#demo"
 }: HeroProps) {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false]);
+  const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false, false]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isWordVisible, setIsWordVisible] = useState(true);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -71,11 +78,12 @@ export default function Hero({
 
   // Infinite card rotation animation and word animation
   useEffect(() => {
-    let currentIndex = 0;
+    let currentCardIndex = 0;
+    let currentHeadlineIndex = 0;
     
     // Show first card after initial delay
     const initialTimer = setTimeout(() => {
-      setVisibleCards([true, false, false]);
+      setVisibleCards([true, false, false, false]);
       setIsWordVisible(true);
     }, 500);
 
@@ -86,12 +94,15 @@ export default function Hero({
       
       // After fade out, change the word and fade in
       setTimeout(() => {
-        currentIndex = (currentIndex + 1) % featureCards.length;
-        const newVisible = [false, false, false];
-        newVisible[currentIndex] = true;
-        setVisibleCards(newVisible);
-        setCurrentWordIndex(currentIndex);
+        // Animate headline (3 words)
+        currentHeadlineIndex = (currentHeadlineIndex + 1) % headlineWords.length;
+        setCurrentWordIndex(currentHeadlineIndex);
         setIsWordVisible(true);
+        // Animate cards (4 cards)
+        currentCardIndex = (currentCardIndex + 1) % featureCards.length;
+        const newVisible = [false, false, false, false];
+        newVisible[currentCardIndex] = true;
+        setVisibleCards(newVisible);
       }, 350); // Half of the transition duration
     }, 5000); // Change card every 5 seconds
 
@@ -122,9 +133,7 @@ export default function Hero({
                       color: 'var(--animated-word-color, #1e40af)',
                     }}
                   >
-                    {currentWordIndex === 0 && 'fastest'}
-                    {currentWordIndex === 1 && 'easiest'}
-                    {currentWordIndex === 2 && 'simplest'}
+                    {headlineWords[currentWordIndex]}
                   </span><br />way to manage contractor work orders.<span role="img" aria-label="smiling face with heart">🥰</span></>
                 )}
               </h1>
@@ -226,7 +235,7 @@ export default function Hero({
                     style={{ 
                       minHeight: '72px', 
                       pointerEvents: 'auto',
-                      backgroundColor: idx === 0 ? '#6b51ff' : idx === 1 ? '#491ae5' : '#34159d',
+                      backgroundColor: idx === 0 ? '#6b51ff' : idx === 1 ? '#582dfa' : idx === 2 ? '#491ae6' : '#3e16c1',
                       boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.2)'
                     }}
                   >

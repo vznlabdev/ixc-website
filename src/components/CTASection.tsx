@@ -5,7 +5,7 @@ import Link from 'next/link'
 interface CTASectionProps {
   title?: string
   titleBreak?: string
-  description?: string
+  description?: React.ReactNode
   buttonText?: string
   buttonUrl?: string
   secondaryButtonText?: string
