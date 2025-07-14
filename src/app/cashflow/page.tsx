@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, { useState, useEffect, useRef } from 'react';
 import CashflowSlider from './CashflowSlider';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,6 +7,7 @@ import Link from 'next/link';
 import { Briefcase, CheckCircle, TrendingUp, PhoneCall, Smile, ListChecks, Quote, Zap, Wrench, Thermometer, Paintbrush, Hammer, Users, Leaf, CloudRain } from 'lucide-react';
 import FAQSection from '@/components/FAQSection';
 import CTASection from '@/components/CTASection';
+import Image from 'next/image';
 
 interface StepCard {
   number: string;
@@ -294,9 +296,27 @@ function CompatibleTradesSection() {
 }
 
 export default function CashflowPage() {
+  // Parallax rotation state for radial background
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      const percentX = x / window.innerWidth;
+      const percentY = y / window.innerHeight;
+      const rotateY = (percentX - 0.5) * 30;
+      const rotateX = (percentY - 0.5) * -30;
+      setRotation({ x: rotateX, y: rotateY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
     <div>
-      <section className="py-16 bg-background dark:bg-background">
+      <section className="py-16 bg-background dark:bg-background relative overflow-hidden" ref={heroRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -316,8 +336,30 @@ export default function CashflowPage() {
                 </Button>
               </div>
             </div>
-            <div className="flex justify-center">
-              <CashflowSlider />
+            <div className="flex justify-center relative min-w-[220px]">
+              {/* Radial background with parallax effect */}
+              <div
+                className="absolute inset-0 flex justify-center items-center z-0 pointer-events-none"
+                style={{
+                  transform: `perspective(1000px) rotateX(${rotation.x * -1.2}deg) rotateY(${rotation.y * -1.2}deg) translateZ(-50px)`,
+                  transition: 'transform 0.3s cubic-bezier(.25,.8,.25,1)',
+                  transformStyle: 'preserve-3d',
+                }}
+              >
+                <Image
+                  src="/hero-radial-bg.svg"
+                  alt="Radial Background"
+                  width={900}
+                  height={900}
+                  className="opacity-60"
+                  style={{ width: 900, height: 900 }}
+                  priority
+                />
+              </div>
+              {/* Stacked cards */}
+              <div className="relative z-10 w-full">
+                <CashflowSlider />
+              </div>
             </div>
           </div>
         </div>
