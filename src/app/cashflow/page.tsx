@@ -320,12 +320,14 @@ export default function CashflowPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-medium text-foreground mb-6">
-                Fast Cashflow.<br />
-                Zero Collection Headaches.
+              <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-2">
+                Cashflow
               </h1>
+              <div className="text-3xl md:text-4xl font-semibold mb-4 text-[#193a8f] dark:text-[#bcdcff]">
+                Fast Cashflow. Zero Collection.<br className="hidden md:block" /> No Headaches.
+              </div>
               <p className="text-xl text-muted-foreground mb-8">
-                Get paid same-day for completed work. No more waiting 30-60 days for property managers to process invoices.
+                Get paid same day for completed work. No more waiting 30-60 days for property managers to process invoices.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button>
