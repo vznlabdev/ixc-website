@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Zap, FileText, Activity, MessageSquare, TrendingUp, Shield } from 'lucide-react'
+import { Zap, FileText, MessageSquare, TrendingUp, Shield, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
@@ -23,8 +23,8 @@ const featureCards: FeatureCard[] = [
     description: "Pre-built work order templates for plumbing, HVAC, electrical, and general maintenance. Just fill and send."
   },
   {
-    icon: Activity,
-    title: "Real-Time Tracking",
+    icon: MapPin,
+    title: "Real-Time Job Tracking",
     description: "See exactly where every job stands: Assigned → Accepted → In Progress → Complete. No more guessing."
   },
   {
