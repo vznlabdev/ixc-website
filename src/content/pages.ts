@@ -173,7 +173,7 @@ export const pageContent = {
       },
       {
         name: "Zach Lane",
-        role: "Chief Legal Officer",
+        role: "CFO",
         bio: "Tech savvy financial executive dedicated to innovation and delivering exceptional customer experiences."
       },
       {
