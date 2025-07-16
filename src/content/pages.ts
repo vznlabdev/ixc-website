@@ -192,7 +192,7 @@ export const pageContent = {
         bio: "Financial guru driven to help teams understand their numbers and own their growth."
       },
       {
-        name: "Dada Amante",
+        name: "Adrian Amante",
         role: "Lead Designer",
         bio: "Award winning designer focused on user experience and interface design."
       }
