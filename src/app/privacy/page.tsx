@@ -1,12 +1,14 @@
-import PageHeaderNarrow from '@/components/PageHeaderNarrow'
+import PageHeader from '@/components/PageHeader'
 
 export default function PrivacyPage() {
   return (
     <div>
-      <PageHeaderNarrow 
+      <PageHeader 
         title="Privacy Policy"
         subtitle="Your privacy is important to us. This policy explains how we collect, use, and protect your personal information."
         lastUpdated="January 15, 2025"
+        narrow
+        showButtons={false}
       />
 
       <section className="py-16 bg-background">

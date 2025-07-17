@@ -1,12 +1,14 @@
-import PageHeaderNarrow from '@/components/PageHeaderNarrow'
+import PageHeader from '@/components/PageHeader'
 
 export default function TermsPage() {
   return (
     <div>
-      <PageHeaderNarrow 
+      <PageHeader 
         title="Terms & Conditions"
         subtitle="Please read these terms and conditions carefully before using our service."
         lastUpdated="January 15, 2025"
+        narrow
+        showButtons={false}
       />
 
       <section className="py-16 bg-background">

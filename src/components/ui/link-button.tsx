@@ -1,10 +1,14 @@
-import { Button, ButtonProps } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
+import { VariantProps } from 'class-variance-authority'
 import Link from 'next/link'
 import { forwardRef } from 'react'
 
-interface LinkButtonProps extends Omit<ButtonProps, 'asChild'> {
+interface LinkButtonProps extends 
+  React.ComponentProps<"button">,
+  VariantProps<typeof buttonVariants> {
   href: string
   external?: boolean
+  asChild?: never
 }
 
 const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
