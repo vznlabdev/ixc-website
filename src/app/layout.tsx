@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,15 +13,15 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "incoXchange - Digital Transformation & Business Solutions",
-  description: "Transform your business with incoXchange. We provide innovative digital solutions including web development, mobile apps, cloud solutions, and consulting services.",
+  title: "incoXchange - Simple Wins",
+  description: "The fastest way to manage contractor work orders.",
   keywords: "digital transformation, web development, mobile apps, cloud solutions, consulting, business solutions",
   authors: [{ name: "incoXchange Team" }],
   creator: "incoXchange",
   publisher: "incoXchange",
   openGraph: {
-    title: "incoXchange - Digital Transformation & Business Solutions",
-    description: "Transform your business with incoXchange. We provide innovative digital solutions for modern businesses.",
+    title: "incoXchange - Simple Wins",
+    description: "The fastest, easiest, simplest way to manage contractor work orders.",
     url: "https://incoxchange.com",
     siteName: "incoXchange",
     type: "website",
@@ -42,6 +43,20 @@ export default function RootLayout({
       <body
         className={`${instrumentSans.variable} font-sans antialiased`}
       >
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TKS3SBGZD1"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TKS3SBGZD1');
+          `}
+        </Script>
+
         <ThemeProvider>
           <Header />
           <main className="min-h-screen">

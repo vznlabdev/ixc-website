@@ -58,24 +58,24 @@ export default function AboutPage() {
       {/* Team Section */}
       <section className="py-16 lg:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-left mb-12">
             <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
               Meet Our Team
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl">
               We&apos;re a diverse group of builders, thinkers, and problem solvers united by a common goal: making work better for everyone.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {aboutContent.team.map((member, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-left">
                 <div className="mb-4">
                   <Image 
                     src={`/${member.name.toLowerCase().replace(' ', '-')}.jpg`}
                     alt={member.name}
-                    width={200}
-                    height={200}
-                    className="rounded-full mx-auto"
+                    width={120}
+                    height={120}
+                    className="rounded-full"
                   />
                 </div>
                 <h3 className="text-xl font-medium text-foreground mb-2">
