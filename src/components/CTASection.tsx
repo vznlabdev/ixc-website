@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button'
+import { LinkButton } from '@/components/ui/link-button'
 import { Card, CardContent } from '@/components/ui/card'
-import Link from 'next/link'
+import { ROUTES } from '@/lib/routes'
 
 interface CTASectionProps {
   title?: string
@@ -18,7 +18,7 @@ export default function CTASection({
   titleBreak,
   description = "Join hundreds of property managers who've transformed their workflow with IncoXchange",
   buttonText = "Start Your Free Account",
-  buttonUrl = "/contact",
+  buttonUrl = ROUTES.CONTACT,
   secondaryButtonText,
   secondaryButtonUrl,
   smallText = "Setup takes 5 minutes. Your contractors will thank you."
@@ -39,34 +39,30 @@ export default function CTASection({
                     </>
                   )}
                 </h2>
-                <p className="text-lg text-primary-foreground/90 max-w-2xl" style={{ fontSize: '16px' }}>
+                <p className="text-base text-primary-foreground/90 max-w-2xl">
                   {description}
                 </p>
               </div>
               
               <div className="flex flex-col items-start lg:items-end">
                 <div className="flex flex-col sm:flex-row gap-3 mb-2">
-                  <Button 
-                    asChild 
+                  <LinkButton 
+                    href={buttonUrl}
                     size="lg" 
                     variant="secondary"
                     className="font-semibold px-10 py-5"
                   >
-                    <Link href={buttonUrl}>
-                      {buttonText}
-                    </Link>
-                  </Button>
+                    {buttonText}
+                  </LinkButton>
                   {secondaryButtonText && secondaryButtonUrl && (
-                    <Button 
-                      asChild 
+                    <LinkButton 
+                      href={secondaryButtonUrl}
                       size="lg" 
                       variant="ghost"
                       className="font-semibold px-10 py-5 text-primary-foreground hover:bg-primary-foreground/10 border border-primary-foreground/20 hover:border-primary-foreground/40"
                     >
-                      <Link href={secondaryButtonUrl}>
-                        {secondaryButtonText}
-                      </Link>
-                    </Button>
+                      {secondaryButtonText}
+                    </LinkButton>
                   )}
                 </div>
                 <p className="text-sm text-primary-foreground/80 text-left lg:text-right">

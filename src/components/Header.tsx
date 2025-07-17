@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Button } from '@/components/ui/button'
+import { LinkButton } from '@/components/ui/link-button'
+import { ROUTES } from '@/lib/routes'
 import { DarkModeToggle } from '@/components/DarkModeToggle'
 import { Menu, X } from 'lucide-react'
 
@@ -80,11 +81,9 @@ export default function Header() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <DarkModeToggle />
-            <Button asChild>
-              <Link href="/contact">
-                Get Started
-              </Link>
-            </Button>
+            <LinkButton href={ROUTES.CONTACT}>
+              Get Started
+            </LinkButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -144,18 +143,16 @@ export default function Header() {
                 News
               </Link>
               <Link 
-                href="/contact" 
+                href={ROUTES.CONTACT}
                 className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 onClick={closeMobileMenu}
               >
                 Contact
               </Link>
               <div className="pt-4 pb-2">
-                <Button asChild className="w-full">
-                  <Link href="/contact" onClick={closeMobileMenu}>
-                    Get Started
-                  </Link>
-                </Button>
+                <LinkButton href={ROUTES.CONTACT} className="w-full" onClick={closeMobileMenu}>
+                  Get Started
+                </LinkButton>
               </div>
             </div>
           </div>

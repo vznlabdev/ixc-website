@@ -1,29 +1,28 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+import { LinkButton } from '@/components/ui/link-button'
 import { Check } from 'lucide-react'
 import PageHeader from '@/components/PageHeader'
 import CTASection from '@/components/CTASection'
 import FAQSection from '@/components/FAQSection'
-import { pageContent } from '@/content/pages'
+import { pricingContent } from '@/content/pricing'
 
 export default function PricingPage() {
   return (
     <div>
       <PageHeader 
-        title={pageContent.pricing.header.title}
-        subtitle={pageContent.pricing.header.subtitle}
-        primaryButtonText={pageContent.pricing.header.primaryButtonText}
-        primaryButtonUrl={pageContent.pricing.header.primaryButtonUrl}
-        secondaryButtonText={pageContent.pricing.header.secondaryButtonText}
-        secondaryButtonUrl={pageContent.pricing.header.secondaryButtonUrl}
+        title={pricingContent.header.title}
+        subtitle={pricingContent.header.subtitle}
+        primaryButtonText={pricingContent.header.primaryButtonText}
+        primaryButtonUrl={pricingContent.header.primaryButtonUrl}
+        secondaryButtonText={pricingContent.header.secondaryButtonText}
+        secondaryButtonUrl={pricingContent.header.secondaryButtonUrl}
       />
 
       {/* Pricing Cards */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pageContent.pricing.plans.map((plan, index) => (
+            {pricingContent.plans.map((plan, index) => (
               <Card 
                 key={index} 
                 className={`shadow-sm relative flex flex-col h-full ${plan.popular ? 'border-2 border-primary shadow-lg' : ''}`}
@@ -59,16 +58,14 @@ export default function PricingPage() {
                     ))}
                   </div>
                   
-                  <Button 
-                    asChild 
-                    className="w-full mt-auto" 
+                  <LinkButton 
+                    href={plan.buttonUrl}
+                    className="w-full" 
                     size="lg"
                     variant={plan.name === 'Enterprise' ? 'outline' : 'default'}
                   >
-                    <Link href={plan.buttonUrl}>
-                      {plan.buttonText}
-                    </Link>
-                  </Button>
+                    {plan.buttonText}
+                  </LinkButton>
                 </CardContent>
               </Card>
             ))}
@@ -76,14 +73,14 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <FAQSection faqData={pageContent.pricing.faq} />
+      <FAQSection faqData={pricingContent.faq} />
 
       <CTASection 
-        title={pageContent.pricing.cta.title}
-        description={pageContent.pricing.cta.description}
-        buttonText={pageContent.pricing.cta.buttonText}
-        buttonUrl={pageContent.pricing.cta.buttonUrl}
-        smallText={pageContent.pricing.cta.smallText}
+        title={pricingContent.cta.title}
+        description={pricingContent.cta.description}
+        buttonText={pricingContent.cta.buttonText}
+        buttonUrl={pricingContent.cta.buttonUrl}
+        smallText={pricingContent.cta.smallText}
       />
     </div>
   )

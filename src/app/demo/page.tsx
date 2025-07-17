@@ -1,146 +1,133 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+import { LinkButton } from '@/components/ui/link-button'
+import HeroSection from '@/components/HeroSection'
+import { ROUTES } from '@/lib/routes'
 import { Play, Calendar, Clock, Users } from 'lucide-react'
 
 export default function DemoPage() {
   return (
     <div>
-      {/* Hero Section */}
-      <section className="bg-background dark:bg-background pt-24 lg:pt-32 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-tight text-foreground">
-              See IncoXchange<br className="hidden md:block" /> in Action
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              Discover how IncoXchange transforms your workflow management through interactive demos and live sessions.
-            </p>
-            <div className="flex flex-row gap-3 md:gap-4 justify-center">
-              <Button asChild size="lg" className="font-semibold px-6 py-5 md:px-10">
-                <Link href="/contact">
-                  Book Live Demo
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="font-semibold px-6 py-5 md:px-10">
-                <Link href="#interactive-demo">
-                  Try Interactive Demo
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection 
+        title={<>See IncoXchange<br className="hidden md:block" /> in Action</>}
+        subtitle="Discover how IncoXchange transforms your workflow management through interactive demos and live sessions."
+        primaryButton={{ text: "Book Live Demo", href: ROUTES.CONTACT }}
+        secondaryButton={{ text: "Try Interactive Demo", href: "#interactive-demo" }}
+      />
 
       {/* Demo Options */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-medium text-center mb-12">Choose Your Demo Experience</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Live Demo */}
-            <Card className="shadow-sm">
-              <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-primary" />
-                </div>
-                <CardTitle className="text-2xl">Live Demo Session</CardTitle>
-                <CardDescription>
-                  One-on-one personalized demo with our product experts
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center text-muted-foreground">
-                    <Clock className="h-5 w-5 text-primary mr-3" />
-                    <span>30-minute session</span>
-                  </li>
-                  <li className="flex items-center text-muted-foreground">
-                    <Calendar className="h-5 w-5 text-primary mr-3" />
-                    <span>Available on your schedule</span>
-                  </li>
-                  <li className="flex items-center text-muted-foreground">
-                    <Users className="h-5 w-5 text-primary mr-3" />
-                    <span>Tailored to your needs</span>
-                  </li>
-                </ul>
-                <Button asChild className="w-full">
-                  <Link href="/contact">
-                    Schedule Demo
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Interactive Demo */}
-            <Card className="shadow-sm">
+            <Card id="interactive-demo" className="shadow-sm">
               <CardHeader className="text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Play className="h-8 w-8 text-primary" />
                 </div>
                 <CardTitle className="text-2xl">Interactive Demo</CardTitle>
                 <CardDescription>
-                  Explore the platform on your own with our guided tour
+                  Try IncoXchange instantly with our interactive walkthrough
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center text-muted-foreground">
-                    <Clock className="h-5 w-5 text-primary mr-3" />
-                    <span>Self-paced experience</span>
+              <CardContent className="text-center">
+                <ul className="text-left space-y-2 mb-6">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span className="text-sm text-muted-foreground">No registration required</span>
                   </li>
-                  <li className="flex items-center text-muted-foreground">
-                    <Play className="h-5 w-5 text-primary mr-3" />
-                    <span>Available 24/7</span>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span className="text-sm text-muted-foreground">See real features in action</span>
                   </li>
-                  <li className="flex items-center text-muted-foreground">
-                    <Users className="h-5 w-5 text-primary mr-3" />
-                    <span>No registration required</span>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span className="text-sm text-muted-foreground">5-minute guided tour</span>
                   </li>
                 </ul>
-                <Button asChild className="w-full" variant="outline">
-                  <Link href="#interactive-demo">
-                    Start Interactive Demo
-                  </Link>
-                </Button>
+                <LinkButton href="#" className="w-full">
+                  Start Interactive Demo
+                </LinkButton>
+              </CardContent>
+            </Card>
+
+            {/* Live Demo */}
+            <Card className="shadow-sm">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Calendar className="h-8 w-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl">Live Demo</CardTitle>
+                <CardDescription>
+                  Get a personalized walkthrough with our team
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="text-center">
+                <ul className="text-left space-y-2 mb-6">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span className="text-sm text-muted-foreground">30-minute screen share</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span className="text-sm text-muted-foreground">Q&A with product expert</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <span className="text-sm text-muted-foreground">Customized to your needs</span>
+                  </li>
+                </ul>
+                <LinkButton href={ROUTES.CONTACT} className="w-full">
+                  Schedule Live Demo
+                </LinkButton>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Interactive Demo Section */}
-      <section id="interactive-demo" className="py-16 bg-muted/50">
+      {/* Demo Features */}
+      <section className="py-16 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-medium mb-4">Interactive Demo</h2>
-            <p className="text-lg text-muted-foreground">
-              Click through the platform and experience the key features firsthand
-            </p>
-          </div>
-          
-          <Card className="shadow-lg border bg-card">
-            <CardContent className="p-8">
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <Play className="h-16 w-16 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Demo Interface</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Interactive demo content will be loaded here
-                  </p>
-                  <Button>
-                    Launch Demo
-                  </Button>
+          <h2 className="text-3xl font-medium text-center mb-12">What the Demo Covers</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Clock,
+                title: "Quick Setup",
+                description: "See how fast you can get started with your first work order"
+              },
+              {
+                icon: Users,
+                title: "Team Collaboration",
+                description: "Learn how contractors and property managers work together"
+              },
+              {
+                icon: Play,
+                title: "Key Features",
+                description: "Explore SMS notifications, photo documentation, and more"
+              },
+              {
+                icon: Calendar,
+                title: "Real Workflows",
+                description: "Watch actual work order scenarios from start to finish"
+              }
+            ].map((item, i) => (
+              <div key={i} className="text-center">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <item.icon className="h-6 w-6 text-primary" />
                 </div>
+                <h3 className="text-lg font-medium mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
               </div>
-            </CardContent>
-          </Card>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Demo Benefits */}
+      {/* What You'll Learn */}
       <section className="py-16 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                      <h2 className="text-3xl font-medium text-center mb-12">What You&apos;ll Learn</h2>
+          <h2 className="text-3xl font-medium text-center mb-12">What You&apos;ll Learn</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {

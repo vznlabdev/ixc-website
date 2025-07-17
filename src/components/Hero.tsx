@@ -1,8 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
+import { LinkButton } from '@/components/ui/link-button'
+import { ROUTES } from '@/lib/routes'
 import InfiniteSlider from '@/components/InfiniteSlider'
 import { useRef, useState, useEffect } from 'react'
 
@@ -44,7 +44,7 @@ export default function Hero({
   title, 
   subtitle,
   ctaText = "Start Free",
-  ctaUrl = "/contact",
+  ctaUrl = ROUTES.CONTACT,
   secondaryCtaText = "Watch Demo",
   secondaryCtaUrl = "#demo"
 }: HeroProps) {
@@ -137,39 +137,33 @@ export default function Hero({
                   </span><br />way to manage contractor work orders.<span role="img" aria-label="smiling face with heart">🥰</span></>
                 )}
               </h1>
-              <p className="mb-10 max-w-4xl text-muted-foreground leading-relaxed" style={{ fontSize: '16px' }}>
+              <p className="mb-10 max-w-4xl text-muted-foreground leading-relaxed text-base">
                 {subtitle || (
                   <>
                     Transform chaotic work orders into organized, professional workflows.<br className="hidden md:block" /> Get complete visibility of every repair, every time.
                   </>
                 )}
               </p>
-              <div className="flex flex-row gap-3 md:gap-4 items-start" style={{ paddingBottom: '2rem' }}>
+              <div className="flex flex-row gap-3 md:gap-4 items-start pb-8">
                 <div className="flex flex-col items-center">
-                  <Button 
-                    asChild 
+                  <LinkButton 
+                    href={ctaUrl} 
                     size="lg" 
-                    className="font-semibold px-6 py-5 md:px-10" 
-                    style={{ fontSize: '12px' }}
+                    className="font-semibold px-6 py-5 md:px-10 text-xs"
                   >
-                    <Link href={ctaUrl}>
-                      {ctaText}
-                    </Link>
-                  </Button>
+                    {ctaText}
+                  </LinkButton>
                   <p className="text-xs text-muted-foreground mt-2">No credit card</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <Button 
-                    asChild 
+                  <LinkButton 
+                    href={secondaryCtaUrl} 
                     size="lg" 
                     variant="outline" 
-                    className="font-semibold px-6 py-5 md:px-10" 
-                    style={{ fontSize: '12px' }}
+                    className="font-semibold px-6 py-5 md:px-10 text-xs"
                   >
-                    <Link href={secondaryCtaUrl}>
-                      {secondaryCtaText}
-                    </Link>
-                  </Button>
+                    {secondaryCtaText}
+                  </LinkButton>
                   <p className="text-xs text-muted-foreground mt-2">See 2-Min Demo</p>
                 </div>
               </div>

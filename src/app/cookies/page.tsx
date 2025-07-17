@@ -1,12 +1,14 @@
-import PageHeaderNarrow from '@/components/PageHeaderNarrow'
+import PageHeader from '@/components/PageHeader'
 
 export default function CookiesPage() {
   return (
     <div>
-      <PageHeaderNarrow 
+      <PageHeader 
         title="Cookie Policy"
         subtitle="This policy explains how we use cookies and similar technologies to provide, improve, and protect our services."
         lastUpdated="January 15, 2025"
+        narrow
+        showButtons={false}
       />
 
       <section className="py-16 bg-background">

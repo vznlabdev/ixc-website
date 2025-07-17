@@ -9,7 +9,7 @@ import StatsSection from "@/components/StatsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
-import { pageContent } from "@/content/pages";
+import { homeContent } from "@/content/home";
 
 export default function Home() {
   return (
@@ -25,11 +25,11 @@ export default function Home() {
       <PricingSection />
       <FAQSection />
       <CTASection 
-        title={pageContent.home.cta.title}
-        description={pageContent.home.cta.description}
-        buttonText={pageContent.home.cta.buttonText}
-        buttonUrl={pageContent.home.cta.buttonUrl}
-        smallText={pageContent.home.cta.smallText}
+        title={homeContent.cta.title}
+        description={homeContent.cta.description}
+        buttonText={homeContent.cta.buttonText}
+        buttonUrl={homeContent.cta.buttonUrl}
+        smallText={homeContent.cta.smallText}
       />
     </div>
   );

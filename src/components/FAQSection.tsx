@@ -1,62 +1,51 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import { LinkButton } from '@/components/ui/link-button'
+import { ROUTES } from '@/lib/routes'
 
-const defaultFaqData = [
-  {
-    question: "What is IncoXchange?",
-    answer: "IncoXchange is a work order management platform for property managers. Create work orders with photos, assign to contractors via text, track everything in real time."
-  },
-  {
-    question: "Do contractors need to download an app?",
-    answer: "No. They get a text with a link, click it, and they're in. Works on any phone with the internet maybe even flip phones."
-  },
-  {
-    question: "How do work orders get tracked for accounting?",
-    answer: "Every job creates a digital paper trail: Timestamped status changes, photos and invoices attached, costs tracked by property/contractor/type, one click export of reports/spreadsheets."
-  },
-  {
-    question: "What if my contractors aren't tech savvy?",
-    answer: "If they can text, they can use IncoXchange. No passwords (login with phone number), no apps, no training."
-  },
-  {
-    question: "Can Finance set spending limits by property?",
-    answer: "Yes. Set monthly or per job limits. Get alerts before overages. Require approval for jobs over custom thresholds."
-  },
-  {
-    question: "How fast can I pay contractors after job completion?",
-    answer: "Contractors submit photos and invoices instantly. You approve from your phone. Digital approval goes straight to accounting—most contractors get paid 2-3 weeks faster."
-  },
-  {
-    question: "Does it integrate with QuickBooks or other accounting software?",
-    answer: "Export to CSV/Excel compatible with QuickBooks, NetSuite, and most systems. Full API integrations coming later this year."
-  },
-  {
-    question: "What reports can I pull for tax season?",
-    answer: "All maintenance by property, contractor payments (1099 info), expenses by category, photo documentation for insurance."
-  },
-  {
-    question: "How much does IncoXchange cost?",
-    answer: "Free, no credit card. $49/month for 6+ properties. Contractors are always free. No setup fees. Cancel anytime."
-  },
-  {
-    question: "Can I try it with just a few properties first?",
-    answer: "Yes! Start with 1 property. See how it works. Add the rest in minutes. No minimums."
-  }
-]
+interface FAQItem {
+  question: string
+  answer: string
+}
 
 interface FAQSectionProps {
-  faqData?: Array<{
-    question: string
-    answer: string
-  }>,
+  faqData?: FAQItem[]
   subtitle?: string
 }
+
+const defaultFaqData: FAQItem[] = [
+  {
+    question: "How does the free trial work?",
+    answer: "Start with our free tier and use IncoXchange with up to 5 properties forever. No credit card required. When you're ready for more, upgrade to Professional or Enterprise plans with just a few clicks."
+  },
+  {
+    question: "Do I need to install anything?",
+    answer: "No installation required! IncoXchange is 100% cloud-based. Access it from any device with a web browser. Your contractors simply use their existing SMS messaging - no app downloads needed."
+  },
+  {
+    question: "How quickly can I get started?",
+    answer: "Most customers are up and running in under 5 minutes. Just create your account, add your first property, and invite contractors. We'll guide you through each step with our interactive setup wizard."
+  },
+  {
+    question: "What kind of support do you offer?",
+    answer: "Free tier includes email support with 24-hour response time. Professional plans get priority support with 2-hour response. Enterprise customers receive dedicated account management and instant phone support."
+  },
+  {
+    question: "Can I import my existing data?",
+    answer: "Yes! We support bulk imports from Excel, CSV, and most property management systems. Our support team can help you migrate your contractor lists, property details, and historical work orders."
+  },
+  {
+    question: "Is my data secure?",
+    answer: "Absolutely. We use bank-level 256-bit encryption, SOC2 compliant infrastructure, and automatic daily backups. Your data is stored in secure AWS data centers with 99.9% uptime guarantee."
+  },
+  {
+    question: "What if my contractors don't have smartphones?",
+    answer: "No problem! Our SMS-based system works with any mobile phone that can send and receive text messages. No internet connection or smartphone required - perfect for all contractor types."
+  },
+  {
+    question: "Can I customize work order templates?",
+    answer: "Yes! Create unlimited custom templates for different job types. Add required fields, photo requirements, budget limits, and approval workflows. Save time by reusing templates for common tasks."
+  }
+]
 
 export default function FAQSection({ faqData = defaultFaqData, subtitle }: FAQSectionProps) {
   return (
@@ -68,23 +57,20 @@ export default function FAQSection({ faqData = defaultFaqData, subtitle }: FAQSe
             <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-6">
               Frequently Asked <br className="hidden md:block" />Questions
             </h2>
-            <p className="text-lg text-muted-foreground max-w-xl mb-8" style={{ fontSize: '16px' }}>
+            <p className="text-base text-muted-foreground max-w-xl mb-8">
               {subtitle || (
                 <>
                   Everything you need to know about IncoXchange. <br className="hidden md:block" />Can&apos;t find what you&apos;re looking for? Contact our support team.
                 </>
               )}
             </p>
-            <Button 
-              asChild 
+            <LinkButton 
+              href={ROUTES.CONTACT}
               size="lg" 
-              className="font-semibold px-6 py-5 md:px-10"
-              style={{ fontSize: '12px' }}
+              className="font-semibold px-6 py-5 md:px-10 text-xs"
             >
-              <Link href="/contact">
-                Contact Us
-              </Link>
-            </Button>
+              Contact Us
+            </LinkButton>
           </div>
           {/* Right Column - Accordion */}
           <div>
