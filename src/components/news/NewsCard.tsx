@@ -99,7 +99,11 @@ export default function NewsCard({ article, variant = 'horizontal' }: NewsCardPr
         </Link>
         {/* Article Content */}
         <div className="md:col-span-2">
-          <h3 className="text-lg font-semibold mb-3 text-foreground">{article.title}</h3>
+          <h3 className="text-lg font-semibold mb-3 text-foreground">
+            <Link href={`/news/${article.slug.current}`} className="hover:text-primary">
+              {article.title}
+            </Link>
+          </h3>
           <div className="flex items-center gap-4 mb-3 text-sm text-muted-foreground">
             {article.category && (
               <Link href={`/news/category/${article.category.slug.current}`}>
