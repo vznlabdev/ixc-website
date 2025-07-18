@@ -5,9 +5,7 @@ export const pricingContent = {
     title: "Pick the plan that's right for your team.",
     subtitle: "Start free and upgrade as you grow.",
     primaryButtonText: "Get Started",
-    primaryButtonUrl: ROUTES.CONTACT,
-    secondaryButtonText: "View Demo",
-    secondaryButtonUrl: ROUTES.DEMO
+    primaryButtonUrl: ROUTES.CONTACT
   },
   cta: {
     title: "Ready to End Contractor Chaos?",

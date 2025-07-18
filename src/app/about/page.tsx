@@ -96,8 +96,6 @@ export default function AboutPage() {
         description={aboutContent.cta.description}
         buttonText={aboutContent.cta.buttonText}
         buttonUrl={aboutContent.cta.buttonUrl}
-        secondaryButtonText={aboutContent.cta.secondaryButtonText}
-        secondaryButtonUrl={aboutContent.cta.secondaryButtonUrl}
       />
     </div>
   )

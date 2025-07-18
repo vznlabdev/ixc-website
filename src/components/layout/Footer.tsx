@@ -57,11 +57,6 @@ export default function Footer() {
                   Pricing
                 </Link>
               </li>
-              <li>
-                <Link href="/demo" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Demo
-                </Link>
-              </li>
             </ul>
           </div>
           
@@ -69,13 +64,8 @@ export default function Footer() {
             <h4 className="text-lg font-medium mb-4 text-foreground" style={{ fontSize: '.875rem' }}>Support</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/help" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Help Center
-                </Link>
-              </li>
-              <li>
-                <Link href="/training" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Training
+                <Link href="/news" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
+                  News
                 </Link>
               </li>
               <li>
@@ -92,11 +82,6 @@ export default function Footer() {
               <li>
                 <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
                   About
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors" style={{ fontSize: '.875rem' }}>
-                  Blog
                 </Link>
               </li>
               <li>
