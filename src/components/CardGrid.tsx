@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils/cn'
 import { LucideIcon } from 'lucide-react'
 
 export interface CardItem {

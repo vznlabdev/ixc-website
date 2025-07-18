@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import PageHeader from '@/components/PageHeader'
+import PageHeader from '@/components/layout/PageHeader'
 import CTASection from '@/components/CTASection'
 import StatsSection from '@/components/StatsSection'
 import { aboutContent } from '@/content/about'

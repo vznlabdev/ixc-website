@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity'
 
-export const page = defineType({
-  name: 'page',
-  title: 'Page',
+export const category = defineType({
+  name: 'category',
+  title: 'Category',
   type: 'document',
   fields: [
     defineField({
@@ -26,26 +26,10 @@ export const page = defineType({
       title: 'Description',
       type: 'text',
     }),
-    defineField({
-      name: 'content',
-      title: 'Content',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-        },
-        {
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
-        },
-      ],
-    }),
-    defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+  },
 }) 

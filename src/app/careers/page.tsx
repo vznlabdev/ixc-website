@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { LinkButton } from '@/components/ui/link-button'
 import { MapPin, Clock, Zap, Users, Heart } from 'lucide-react'
-import PageHeader from '@/components/PageHeader'
+import PageHeader from '@/components/layout/PageHeader'
 import { careersContent } from '@/content/careers'
 import { ROUTES } from '@/lib/routes'
 
