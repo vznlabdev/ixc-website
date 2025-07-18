@@ -29,7 +29,9 @@ export default function FeaturedNewsCard({ post }: FeaturedNewsCardProps) {
         </div>
       </Link>
       <h3 className="text-xl font-semibold mb-4 text-foreground">
-        {post.title}
+        <Link href={`/news/${post.slug.current}`} className="hover:text-primary">
+          {post.title}
+        </Link>
       </h3>
       <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
         {post.category && (
