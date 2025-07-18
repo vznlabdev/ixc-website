@@ -14,8 +14,6 @@ export default function PricingPage() {
         subtitle={pricingContent.header.subtitle}
         primaryButtonText={pricingContent.header.primaryButtonText}
         primaryButtonUrl={pricingContent.header.primaryButtonUrl}
-        secondaryButtonText={pricingContent.header.secondaryButtonText}
-        secondaryButtonUrl={pricingContent.header.secondaryButtonUrl}
       />
 
       {/* Pricing Cards */}

@@ -255,8 +255,8 @@ export default function ApiDocsPage() {
                     </Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className="font-semibold px-10">
-                    <Link href="/help">
-                      View Help Center
+                    <Link href="/contact">
+                      Contact Support
                     </Link>
                   </Button>
                 </div>

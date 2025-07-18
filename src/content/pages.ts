@@ -4,9 +4,7 @@ export const pageContent = {
       title: "Powerful Features for Modern Teams",
       subtitle: "Discover all the tools and capabilities that make IncoXchange the perfect solution for your workflow management needs.",
       primaryButtonText: "Get Started",
-      primaryButtonUrl: "/contact",
-      secondaryButtonText: "View Demo",
-      secondaryButtonUrl: "/demo"
+      primaryButtonUrl: "/contact"
     },
     cta: {
       title: "Try Every Feature Free",
@@ -64,9 +62,7 @@ export const pageContent = {
       title: "Pick the plan that's right for your team.",
       subtitle: "Start free and upgrade as you grow.",
       primaryButtonText: "Get Started",
-      primaryButtonUrl: "/contact",
-      secondaryButtonText: "View Demo",
-      secondaryButtonUrl: "/demo"
+      primaryButtonUrl: "/contact"
     },
     cta: {
       title: "Ready to End Contractor Chaos?",
@@ -219,9 +215,7 @@ export const pageContent = {
       title: "Ready to Get Started?",
       description: "Join IncoXchange today and discover what work feels like without the chaos. Your team will thank you.",
       buttonText: "Start Free Trial",
-      buttonUrl: "/contact",
-      secondaryButtonText: "Book a Demo",
-      secondaryButtonUrl: "/demo"
+      buttonUrl: "/contact"
     }
   },
   careers: {
@@ -288,9 +282,9 @@ export const pageContent = {
   contact: {
     header: {
       title: "Get in Touch",
-      subtitle: "Need help? Want a demo? Just saying hi? We'd love to hear from you.",
-      primaryButtonText: "Schedule Demo",
-      primaryButtonUrl: "/demo",
+      subtitle: "Need help? Just saying hi? We'd love to hear from you.",
+      primaryButtonText: "Contact Us",
+      primaryButtonUrl: "/contact",
       secondaryButtonText: "View Features",
       secondaryButtonUrl: "/features"
     }

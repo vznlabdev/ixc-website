@@ -20,7 +20,7 @@ export default function PageHeader({
   primaryButtonText = "Get Started",
   primaryButtonUrl = ROUTES.CONTACT,
   secondaryButtonText = "View Demo", 
-  secondaryButtonUrl = ROUTES.DEMO,
+  secondaryButtonUrl,
   showButtons = true,
   lastUpdated,
   narrow = false
@@ -57,14 +57,16 @@ export default function PageHeader({
               >
                 {primaryButtonText}
               </LinkButton>
-              <LinkButton 
-                href={secondaryButtonUrl}
-                size="lg" 
-                variant="outline" 
-                className="font-semibold px-6 py-5 md:px-10"
-              >
-                {secondaryButtonText}
-              </LinkButton>
+              {secondaryButtonUrl && (
+                <LinkButton 
+                  href={secondaryButtonUrl}
+                  size="lg" 
+                  variant="outline" 
+                  className="font-semibold px-6 py-5 md:px-10"
+                >
+                  {secondaryButtonText}
+                </LinkButton>
+              )}
             </div>
           )}
         </div>

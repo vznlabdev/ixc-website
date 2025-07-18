@@ -5,9 +5,7 @@ export const featuresContent = {
     title: "Powerful Features for Modern Teams",
     subtitle: "Discover all the tools and capabilities that make IncoXchange the perfect solution for your workflow management needs.",
     primaryButtonText: "Get Started",
-    primaryButtonUrl: ROUTES.CONTACT,
-    secondaryButtonText: "View Demo",
-    secondaryButtonUrl: ROUTES.DEMO
+    primaryButtonUrl: ROUTES.CONTACT
   },
   cta: {
     title: "Try Every Feature Free",

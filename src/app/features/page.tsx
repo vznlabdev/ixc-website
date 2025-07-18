@@ -38,8 +38,6 @@ export default function FeaturesPage() {
         subtitle={featuresContent.header.subtitle}
         primaryButtonText={featuresContent.header.primaryButtonText}
         primaryButtonUrl={featuresContent.header.primaryButtonUrl}
-        secondaryButtonText={featuresContent.header.secondaryButtonText}
-        secondaryButtonUrl={featuresContent.header.secondaryButtonUrl}
       />
 
       {/* Features Grid */}

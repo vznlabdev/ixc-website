@@ -71,8 +71,6 @@ export const aboutContent = {
     title: "Ready to Get Started?",
     description: "Join IncoXchange today and discover what work feels like without the chaos. Your team will thank you.",
     buttonText: "Start Free Trial",
-    buttonUrl: ROUTES.CONTACT,
-    secondaryButtonText: "Book a Demo",
-    secondaryButtonUrl: ROUTES.DEMO
+    buttonUrl: ROUTES.CONTACT
   }
 } 
