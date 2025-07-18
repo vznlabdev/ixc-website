@@ -1,5 +1,5 @@
 import { LinkButton } from '@/components/ui/link-button'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils/cn'
 
 interface HeroSectionProps {
   title: string | React.ReactNode

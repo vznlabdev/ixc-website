@@ -1,6 +1,6 @@
 import { LinkButton } from '@/components/ui/link-button'
 import { ROUTES } from '@/lib/routes'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils/cn'
 
 interface PageHeaderProps {
   title: string

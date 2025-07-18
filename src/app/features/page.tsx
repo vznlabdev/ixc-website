@@ -12,7 +12,7 @@ import {
   FileText,
   Infinity
 } from 'lucide-react'
-import PageHeader from '@/components/PageHeader'
+import PageHeader from '@/components/layout/PageHeader'
 import CTASection from '@/components/CTASection'
 import { featuresContent } from '@/content/features'
 

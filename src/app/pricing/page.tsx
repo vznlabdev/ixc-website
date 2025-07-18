@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { LinkButton } from '@/components/ui/link-button'
 import { Check } from 'lucide-react'
-import PageHeader from '@/components/PageHeader'
+import PageHeader from '@/components/layout/PageHeader'
 import CTASection from '@/components/CTASection'
 import FAQSection from '@/components/FAQSection'
 import { pricingContent } from '@/content/pricing'
