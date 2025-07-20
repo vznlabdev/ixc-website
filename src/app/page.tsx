@@ -1,5 +1,7 @@
 import Hero from "@/components/Hero";
 import GetStartedSection from "@/components/GetStartedSection";
+import HiddenCostSection from "@/components/HiddenCostSection";
+import HiddenCostSectionReverse from "@/components/HiddenCostSectionReverse";
 import CTASection from "@/components/CTASection";
 import ProblemsSection from "@/components/ProblemsSection";
 import SolutionsSection from "@/components/SolutionsSection";
@@ -16,6 +18,8 @@ export default function Home() {
     <div>
       <Hero />
       <GetStartedSection />
+      <HiddenCostSection />
+      <HiddenCostSectionReverse />
       <ProblemsSection />
       <SolutionsSection />
       <FeaturesSection />

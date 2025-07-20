@@ -93,140 +93,7 @@ function HowItWorksSection() {
   )
 }
 
-function HiddenCostSection() {
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
-  // Global mouse move handler for 3D effect
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const x = e.clientX;
-      const y = e.clientY;
-      const percentX = x / window.innerWidth;
-      const percentY = y / window.innerHeight;
-      // 3D rotation range: -15deg to 15deg
-      const rotateY = (percentX - 0.5) * 30; // -15deg to 15deg
-      const rotateX = (percentY - 0.5) * -30; // -15deg to 15deg (inverted for natural feel)
-      setRotation({ x: rotateX, y: rotateY });
-    };
-
-    // Add global event listener
-    window.addEventListener('mousemove', handleMouseMove);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
-  return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-          <div className="flex-1 text-left">
-            <h2 className="text-4xl md:text-5xl font-medium text-foreground mb-6 leading-tight">
-              The Hidden Costs<br />of Slow Payments
-            </h2>
-            
-            <p className="text-lg text-muted-foreground mb-8 max-w-md">
-              Your best contractors are leaving for competitors who pay faster.
-            </p>
-
-            <Button asChild size="lg" className="font-semibold px-8">
-              <Link href="/contact">
-                Get Started Free
-              </Link>
-            </Button>
-          </div>
-          
-          <div className="flex-1 relative flex justify-end">
-            <div className="relative">
-              <Image
-                src="/property-manager-with-contractor.jpg"
-                alt="Property manager with contractor"
-                width={288}
-                height={360}
-                className="rounded-2xl shadow-2xl object-cover"
-                style={{ 
-                  width: '288px', 
-                  height: '360px',
-                  transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,
-                  transition: 'transform 0.3s cubic-bezier(.25,.8,.25,1)',
-                  transformStyle: 'preserve-3d'
-                }}
-              />
-              
-              {/* Main overlay card */}
-              <div 
-                className="absolute w-[228px] z-20"
-                style={{ 
-                  top: '4%',
-                  left: '-75%',
-                  transform: `perspective(1000px) rotateX(${rotation.x * 0.6}deg) rotateY(${rotation.y * 0.6}deg)`,
-                  transition: 'transform 0.3s cubic-bezier(.25,.8,.25,1)',
-                  transformStyle: 'preserve-3d'
-                }}
-              >
-                <div
-                  className="w-full rounded-2xl backdrop-blur-md p-4"
-                  style={{ 
-                    backgroundColor: '#6b51ff',
-                    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.3)'
-                  }}
-                >
-                  <div className="font-semibold text-white text-base mb-4">
-                    What you&apos;re losing:
-                  </div>
-                  <ul className="space-y-2 text-white text-sm leading-relaxed">
-                    <li className="flex items-start">
-                      <span className="mr-2 mt-1">•</span>
-                      <span>Reliable contractors choosing other property managers</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2 mt-1">•</span>
-                      <span>Higher bids to cover financing costs (18-24% gets built into quotes)</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2 mt-1">•</span>
-                      <span>Project delays when contractors prioritize faster-paying clients</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="mr-2 mt-1">•</span>
-                      <span>Time spent managing payment complaints and disputes</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              
-              {/* Secondary overlay card */}
-              <div 
-                className="absolute w-[235px] z-20"
-                style={{ 
-                  bottom: '2%',
-                  left: '-65%',
-                  transform: `perspective(1000px) rotateX(${rotation.x * 0.4}deg) rotateY(${rotation.y * 0.4}deg)`,
-                  transition: 'transform 0.3s cubic-bezier(.25,.8,.25,1)',
-                  transformStyle: 'preserve-3d'
-                }}
-              >
-                <div
-                  className="w-full rounded-2xl backdrop-blur-md p-4"
-                  style={{ 
-                    backgroundColor: '#491ae6',
-                    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.3)'
-                  }}
-                >
-                  <div className="text-white text-sm leading-relaxed">
-                    What if your contractors never had to worry about cash flow again?
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function BenefitsSection() {
   const blueShades = [
@@ -494,48 +361,50 @@ function ComparisonSection() {
         </div>
         
         <div className="bg-background rounded-2xl shadow-lg overflow-hidden border border-muted">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="p-6"></TableHead>
-                <TableHead className="p-6">
-                  <div className="text-lg">Line of Credit</div>
-                </TableHead>
-                <TableHead className="p-6">
-                  <div className="text-lg text-primary">IncoXchange Cashflow</div>
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {comparisonData.map((row, index) => (
-                <TableRow key={index}>
-                  <TableCell className="p-6 font-medium">
-                    {row.feature}
-                  </TableCell>
-                  <TableCell className="p-6">
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      {row.lineOfCredit.hasCheck ? (
-                        <Check className="h-5 w-5 text-green-500" />
-                      ) : (
-                        <X className="h-5 w-5 text-red-500" />
-                      )}
-                      <span className="text-sm">{row.lineOfCredit.text}</span>
-                    </div>
-                  </TableCell>
-                  <TableCell className="p-6">
-                    <div className="flex items-center gap-2 text-foreground">
-                      {row.incoXchange.hasCheck ? (
-                        <Check className="h-5 w-5 text-green-500" />
-                      ) : (
-                        <X className="h-5 w-5 text-red-500" />
-                      )}
-                      <span className="text-sm font-medium">{row.incoXchange.text}</span>
-                    </div>
-                  </TableCell>
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="p-3 md:p-6 min-w-[140px]"></TableHead>
+                  <TableHead className="p-3 md:p-6 min-w-[180px]">
+                    <div className="text-sm md:text-lg whitespace-nowrap">Line of Credit</div>
+                  </TableHead>
+                  <TableHead className="p-3 md:p-6 min-w-[200px]">
+                    <div className="text-sm md:text-lg text-primary whitespace-nowrap">IncoXchange Cashflow</div>
+                  </TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {comparisonData.map((row, index) => (
+                  <TableRow key={index}>
+                    <TableCell className="p-3 md:p-6 font-medium text-xs md:text-sm">
+                      {row.feature}
+                    </TableCell>
+                    <TableCell className="p-3 md:p-6">
+                      <div className="flex items-center gap-1 md:gap-2 text-muted-foreground">
+                        {row.lineOfCredit.hasCheck ? (
+                          <Check className="h-4 w-4 md:h-5 md:w-5 text-green-500 flex-shrink-0" />
+                        ) : (
+                          <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 flex-shrink-0" />
+                        )}
+                        <span className="text-xs md:text-sm">{row.lineOfCredit.text}</span>
+                      </div>
+                    </TableCell>
+                    <TableCell className="p-3 md:p-6">
+                      <div className="flex items-center gap-1 md:gap-2 text-foreground">
+                        {row.incoXchange.hasCheck ? (
+                          <Check className="h-4 w-4 md:h-5 md:w-5 text-green-500 flex-shrink-0" />
+                        ) : (
+                          <X className="h-4 w-4 md:h-5 md:w-5 text-red-500 flex-shrink-0" />
+                        )}
+                        <span className="text-xs md:text-sm font-medium">{row.incoXchange.text}</span>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </div>
       </div>
     </section>
@@ -615,8 +484,6 @@ export default function CashflowPage() {
       </section>
       
       <HowItWorksSection />
-      
-      <HiddenCostSection />
       
       <BenefitsSection />
       
