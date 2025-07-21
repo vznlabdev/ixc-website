@@ -23,7 +23,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground mb-4">
-              Simple wins.
+              Approve Work Fast. Pay Contractors Instantly.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-muted-foreground hover:text-foreground transition-colors">

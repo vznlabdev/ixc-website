@@ -13,14 +13,14 @@ const instrumentSans = Instrument_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "incoXchange - Simple Wins",
+  title: "incoXchange - Approve Work Fast. Pay Contractors Instantly.",
   description: "The fastest way to manage contractor work orders.",
   keywords: "digital transformation, web development, mobile apps, cloud solutions, consulting, business solutions",
   authors: [{ name: "incoXchange Team" }],
   creator: "incoXchange",
   publisher: "incoXchange",
   openGraph: {
-    title: "incoXchange - Simple Wins",
+    title: "incoXchange - Approve Work Fast. Pay Contractors Instantly.",
     description: "The fastest, easiest, simplest way to manage contractor work orders.",
     url: "https://incoxchange.com",
     siteName: "incoXchange",
