@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Mail, Phone, MapPin } from 'lucide-react'
 import PageHeader from '@/components/layout/PageHeader'
 import { pageContent } from '@/content/pages'
-import Script from 'next/script'
+import { ContactForm } from '@/components/forms'
 
 export default function ContactPage() {
   return (
@@ -15,24 +15,8 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div style={{ minHeight: '834px' }}>
-                      <iframe
-              src="https://link.1prompt.com/widget/form/LfTtf8BTl6yv5EBZjFar"
-              style={{ width: '100%', height: '100%', border: 'none', borderRadius: '16px' }}
-              id="inline-LfTtf8BTl6yv5EBZjFar" 
-              data-layout="{'id':'INLINE'}"
-              data-trigger-type="alwaysShow"
-              data-trigger-value=""
-              data-activation-type="alwaysActivated"
-              data-activation-value=""
-              data-deactivation-type="neverDeactivate"
-              data-deactivation-value=""
-              data-form-name="Contact Page"
-              data-height="1048"
-              data-layout-iframe-id="inline-LfTtf8BTl6yv5EBZjFar"
-              data-form-id="LfTtf8BTl6yv5EBZjFar"
-              title="Contact Page"
-            />
+          <div>
+            <ContactForm />
           </div>
 
           {/* Contact Information */}
@@ -101,11 +85,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* 1Prompt Form Script */}
-      <Script 
-        src="https://link.1prompt.com/js/form_embed.js"
-        strategy="afterInteractive"
-      />
+
     </>
   )
 } 
