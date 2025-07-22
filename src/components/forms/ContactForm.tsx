@@ -24,7 +24,6 @@ const contactFormSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
   subject: z.string().optional(),
   message: z.string().optional(),
-  files: z.any().optional(),
   transactionalConsent: z.boolean().optional(),
   marketingConsent: z.boolean().optional(),
 })
@@ -48,7 +47,6 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
       email: '',
       subject: '',
       message: '',
-      files: undefined,
       transactionalConsent: false,
       marketingConsent: false,
     },
@@ -63,6 +61,8 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
         await onSubmit(data)
       } else {
         // Default API call if no custom onSubmit provided
+        console.log('Submitting contact form:', data)
+        
         const response = await fetch('/api/webhooks/ghl/contact', {
           method: 'POST',
           headers: {
@@ -72,8 +72,16 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
         })
 
         if (!response.ok) {
-          throw new Error('Failed to submit form')
+          const errorText = await response.text()
+          console.error('Contact form submission failed:', {
+            status: response.status,
+            statusText: response.statusText,
+            errorText
+          })
+          throw new Error(`Failed to submit form: ${response.status} ${response.statusText}`)
         }
+        
+        console.log('Contact form submitted successfully!')
       }
 
       setSubmitStatus('success')
@@ -205,36 +213,7 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="files"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>File Upload</FormLabel>
-                  <FormControl>
-                    <div className="flex items-center justify-center w-full">
-                      <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-muted-foreground/25 rounded-lg cursor-pointer bg-muted/20 hover:bg-muted/30 transition-colors">
-                        <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                          <svg className="w-8 h-8 mb-4 text-muted-foreground" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-                          </svg>
-                          <p className="mb-2 text-sm text-muted-foreground">
-                            <span className="font-semibold">Click to upload</span> or drag and drop
-                          </p>
-                        </div>
-                        <input
-                          type="file"
-                          multiple
-                          className="hidden"
-                          onChange={(e) => field.onChange(e.target.files)}
-                        />
-                      </label>
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+
 
             <FormField
               control={form.control}
