@@ -3,8 +3,8 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
-import Link from 'next/link'
 import { Briefcase, Users, Wrench } from 'lucide-react'
+import WaitlistModal from '@/components/WaitlistModal'
 
 interface TabContent {
   title: string
@@ -76,16 +76,17 @@ export default function GetStartedSection() {
             Get Started in 5 Minutes
           </h2>
           
-          <Button 
-            asChild 
-            size="lg" 
-            className="font-semibold px-6 py-5 md:px-10 w-fit lg:w-auto"
-            style={{ fontSize: '12px' }}
-          >
-            <Link href="/contact">
-              Get Started Free
-            </Link>
-          </Button>
+          <WaitlistModal 
+            trigger={
+              <Button 
+                size="lg" 
+                className="font-semibold px-6 py-5 md:px-10 w-fit lg:w-auto"
+                style={{ fontSize: '12px' }}
+              >
+                Get Started Free
+              </Button>
+            }
+          />
         </div>
         
         {/* Large shadcn Tabs Section */}

@@ -11,9 +11,7 @@ export default function AboutPage() {
         title={aboutContent.header.title}
         subtitle={aboutContent.header.subtitle}
         primaryButtonText={aboutContent.header.primaryButtonText}
-        primaryButtonUrl={aboutContent.header.primaryButtonUrl}
         secondaryButtonText={aboutContent.header.secondaryButtonText}
-        secondaryButtonUrl={aboutContent.header.secondaryButtonUrl}
       />
 
       {/* Mission Section */}

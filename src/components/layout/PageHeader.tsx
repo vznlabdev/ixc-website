@@ -1,14 +1,12 @@
 import { LinkButton } from '@/components/ui/link-button'
-import { ROUTES } from '@/lib/routes'
 import { cn } from '@/utils/cn'
+import WaitlistModal from '@/components/WaitlistModal'
 
 interface PageHeaderProps {
   title: string
   subtitle?: string
   primaryButtonText?: string
-  primaryButtonUrl?: string
   secondaryButtonText?: string 
-  secondaryButtonUrl?: string
   showButtons?: boolean
   lastUpdated?: string
   narrow?: boolean
@@ -18,9 +16,7 @@ export default function PageHeader({
   title,
   subtitle,
   primaryButtonText = "Get Started",
-  primaryButtonUrl = ROUTES.CONTACT,
   secondaryButtonText = "View Demo", 
-  secondaryButtonUrl,
   showButtons = true,
   lastUpdated,
   narrow = false
@@ -50,22 +46,30 @@ export default function PageHeader({
           )}
           {showButtons && !narrow && (
             <div className="flex flex-row gap-3 md:gap-4">
-              <LinkButton 
-                href={primaryButtonUrl}
-                size="lg" 
-                className="font-semibold px-6 py-5 md:px-10"
-              >
-                {primaryButtonText}
-              </LinkButton>
-              {secondaryButtonUrl && (
-                <LinkButton 
-                  href={secondaryButtonUrl}
-                  size="lg" 
-                  variant="outline" 
-                  className="font-semibold px-6 py-5 md:px-10"
-                >
-                  {secondaryButtonText}
-                </LinkButton>
+              <WaitlistModal 
+                trigger={
+                  <LinkButton 
+                    href="#"
+                    size="lg" 
+                    className="font-semibold px-6 py-5 md:px-10"
+                  >
+                    {primaryButtonText}
+                  </LinkButton>
+                }
+              />
+              {secondaryButtonText && (
+                <WaitlistModal 
+                  trigger={
+                    <LinkButton 
+                      href="#"
+                      size="lg" 
+                      variant="outline" 
+                      className="font-semibold px-6 py-5 md:px-10"
+                    >
+                      {secondaryButtonText}
+                    </LinkButton>
+                  }
+                />
               )}
             </div>
           )}

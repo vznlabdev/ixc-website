@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import WaitlistModal from '@/components/WaitlistModal';
 
 export default function HiddenCostSectionReverse() {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -106,11 +106,13 @@ export default function HiddenCostSectionReverse() {
                   <div className="text-white text-lg leading-relaxed mb-4">
                     What if your contractors never had to worry about cash flow again?
                   </div>
-                  <Button asChild size="sm" className="font-semibold w-full bg-white dark:bg-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: '#6b51ff' }}>
-                    <Link href="/contact">
-                      Get Started Free
-                    </Link>
-                  </Button>
+                  <WaitlistModal 
+                    trigger={
+                      <Button size="sm" className="font-semibold w-full bg-white dark:bg-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: '#6b51ff' }}>
+                        Get Started Free
+                      </Button>
+                    }
+                  />
                 </div>
               </div>
             </div>

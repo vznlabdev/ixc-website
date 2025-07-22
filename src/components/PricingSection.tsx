@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
+import WaitlistModal from '@/components/WaitlistModal'
 
 const features = [
   'Unlimited work orders',
@@ -53,9 +54,13 @@ export default function PricingSection() {
                 ))}
               </div>
               
-              <Button className="w-full mt-20" size="lg">
-                Start Free Today
-              </Button>
+              <WaitlistModal 
+                trigger={
+                  <Button className="w-full mt-20" size="lg">
+                    Start Free Today
+                  </Button>
+                }
+              />
               
               <p className="text-center text-muted-foreground text-xs mt-4">
                 Premium features coming 2025

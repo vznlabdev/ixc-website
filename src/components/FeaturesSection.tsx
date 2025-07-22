@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Zap, FileText, MessageSquare, TrendingUp, Shield, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+import WaitlistModal from '@/components/WaitlistModal'
 
 interface FeatureCard {
   icon: React.ComponentType<{ className?: string }>;
@@ -98,16 +98,17 @@ export default function FeaturesSection() {
             <p className="text-lg text-muted-foreground max-w-xl mb-6" style={{ fontSize: '16px' }}>
               Stop juggling multiple tools. IncoXchange handles your entire contractor workflow.
             </p>
-            <Button 
-              asChild 
-              size="lg" 
-              className="font-semibold px-10 py-5" 
-              style={{ fontSize: '12px' }}
-            >
-              <Link href="/contact">
-                Get Started
-              </Link>
-            </Button>
+            <WaitlistModal 
+              trigger={
+                <Button 
+                  size="lg" 
+                  className="font-semibold px-10 py-5" 
+                  style={{ fontSize: '12px' }}
+                >
+                  Get Started
+                </Button>
+              }
+            />
           </div>
 
           {/* Right Column - Scrollable Cards */}

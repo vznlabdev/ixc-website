@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import WaitlistModal from '@/components/WaitlistModal'
 
 interface StepCard {
   number: string;
@@ -43,9 +44,13 @@ export default function HowItWorksSection() {
               From problem to completion in 4 easy steps.<br className="hidden md:block" /> Your contractors will actually use this.
             </p>
           </div>
-          <Button className="self-start lg:self-auto">
-            Get Started
-          </Button>
+          <WaitlistModal 
+            trigger={
+              <Button className="self-start lg:self-auto">
+                Get Started
+              </Button>
+            }
+          />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

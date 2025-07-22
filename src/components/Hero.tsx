@@ -2,17 +2,15 @@
 
 import Image from 'next/image'
 import { LinkButton } from '@/components/ui/link-button'
-import { ROUTES } from '@/lib/routes'
 import InfiniteSlider from '@/components/InfiniteSlider'
+import WaitlistModal from '@/components/WaitlistModal'
 import { useRef, useState, useEffect } from 'react'
 
 interface HeroProps {
   title?: string
   subtitle?: string
   ctaText?: string
-  ctaUrl?: string
   secondaryCtaText?: string
-  secondaryCtaUrl?: string
 }
 
 const headlineWords = ['fastest', 'easiest', 'simplest'];
@@ -44,9 +42,7 @@ export default function Hero({
   title, 
   subtitle,
   ctaText = "Start Free",
-  ctaUrl = ROUTES.CONTACT,
-  secondaryCtaText = "Watch Demo",
-  secondaryCtaUrl = "#demo"
+  secondaryCtaText = "Watch Demo"
 }: HeroProps) {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [visibleCards, setVisibleCards] = useState<boolean[]>([false, false, false, false]);
@@ -146,24 +142,32 @@ export default function Hero({
               </p>
               <div className="flex flex-row gap-3 md:gap-4 items-start pb-8">
                 <div className="flex flex-col items-center">
-                  <LinkButton 
-                    href={ctaUrl} 
-                    size="lg" 
-                    className="font-semibold px-6 py-5 md:px-10 text-xs"
-                  >
-                    {ctaText}
-                  </LinkButton>
+                  <WaitlistModal 
+                    trigger={
+                      <LinkButton 
+                        href="#" 
+                        size="lg" 
+                        className="font-semibold px-6 py-5 md:px-10 text-xs"
+                      >
+                        {ctaText}
+                      </LinkButton>
+                    }
+                  />
                   <p className="text-xs text-muted-foreground mt-2">No credit card</p>
                 </div>
                 <div className="flex flex-col items-center">
-                  <LinkButton 
-                    href={secondaryCtaUrl} 
-                    size="lg" 
-                    variant="outline" 
-                    className="font-semibold px-6 py-5 md:px-10 text-xs"
-                  >
-                    {secondaryCtaText}
-                  </LinkButton>
+                  <WaitlistModal 
+                    trigger={
+                      <LinkButton 
+                        href="#" 
+                        size="lg" 
+                        variant="outline" 
+                        className="font-semibold px-6 py-5 md:px-10 text-xs"
+                      >
+                        {secondaryCtaText}
+                      </LinkButton>
+                    }
+                  />
                   <p className="text-xs text-muted-foreground mt-2">See 2-Min Demo</p>
                 </div>
               </div>
