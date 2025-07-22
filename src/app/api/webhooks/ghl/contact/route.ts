@@ -2,10 +2,22 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const GHL_CONTACT_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/qohVjcq7e7u0UqVI7QvM/webhook-trigger/b741144f-d409-4dea-9b82-59f267be46b6'
 
+export async function OPTIONS() {
+  return NextResponse.json({}, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  })
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     console.log('Received contact form data:', body)
+    console.log('Environment:', process.env.NODE_ENV)
+    console.log('Vercel URL:', process.env.VERCEL_URL)
     
     // Transform the data to match GHL format
     const ghlData = {
@@ -44,6 +56,12 @@ export async function POST(request: NextRequest) {
       success: true, 
       message: 'Contact form submitted successfully',
       ghlStatus: ghlResponse.status 
+    }, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      },
     })
 
   } catch (error) {
@@ -57,7 +75,14 @@ export async function POST(request: NextRequest) {
         message: 'Failed to submit contact form',
         error: error instanceof Error ? error.message : 'Unknown error' 
       },
-      { status: 500 }
+      { 
+        status: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
+      }
     )
   }
 } 
