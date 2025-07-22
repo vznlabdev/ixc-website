@@ -63,17 +63,31 @@ export default function ContactForm({ onSubmit, className = "" }: ContactFormPro
         await onSubmit(data)
       } else {
         // Default API call if no custom onSubmit provided
+        // Remove files from the data before sending (they can't be serialized)
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { files, ...formDataWithoutFiles } = data
+        
+        console.log('Submitting contact form:', formDataWithoutFiles)
+        
         const response = await fetch('/api/webhooks/ghl/contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(formDataWithoutFiles),
         })
 
         if (!response.ok) {
-          throw new Error('Failed to submit form')
+          const errorText = await response.text()
+          console.error('Contact form submission failed:', {
+            status: response.status,
+            statusText: response.statusText,
+            errorText
+          })
+          throw new Error(`Failed to submit form: ${response.status} ${response.statusText}`)
         }
+        
+        console.log('Contact form submitted successfully!')
       }
 
       setSubmitStatus('success')
