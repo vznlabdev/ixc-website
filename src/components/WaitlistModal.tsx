@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useState } from 'react'
 import {
   Dialog,
   DialogContent,
@@ -22,21 +21,6 @@ export default function WaitlistModal({
   open, 
   onOpenChange 
 }: WaitlistModalProps) {
-  const [shouldLoadIframe, setShouldLoadIframe] = useState(false)
-
-  // Only load iframe when modal opens
-  useEffect(() => {
-    if (open) {
-      // Small delay to let dialog render first
-      const timer = setTimeout(() => {
-        setShouldLoadIframe(true)
-      }, 50)
-      return () => clearTimeout(timer)
-    } else {
-      setShouldLoadIframe(false)
-    }
-  }, [open])
-
   return (
     <>
       <Dialog open={open} onOpenChange={onOpenChange}>
@@ -57,37 +41,29 @@ export default function WaitlistModal({
             overflowY: 'auto',
             overflowX: 'hidden'
           }}>
-            {!shouldLoadIframe && (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-400"></div>
-              </div>
-            )}
-            
-            {shouldLoadIframe && (
-              <iframe
-                src="https://link.1prompt.com/widget/form/RYKEFxD5bGpz1q1bXZIZ"
-                style={{ 
-                  width: '100%', 
-                  height: '800px', 
-                  border: 'none', 
-                  borderRadius: '16px',
-                  display: 'block'
-                }}
-                id="waitlist-inline-form"
-                data-layout="{'id':'INLINE'}"
-                data-trigger-type="alwaysShow"
-                data-trigger-value=""
-                data-activation-type="alwaysActivated"
-                data-activation-value=""
-                data-deactivation-type="neverDeactivate"
-                data-deactivation-value=""
-                data-form-name="Waitlist Modal"
-                data-height="undefined"
-                data-layout-iframe-id="waitlist-inline-form"
-                data-form-id="RYKEFxD5bGpz1q1bXZIZ"
-                title="Waitlist Modal"
-              />
-            )}
+            <iframe
+              src="https://link.1prompt.com/widget/form/RYKEFxD5bGpz1q1bXZIZ"
+              style={{ 
+                width: '100%', 
+                height: '800px', 
+                border: 'none', 
+                borderRadius: '16px',
+                display: 'block'
+              }}
+              id="waitlist-inline-form"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Waitlist Modal"
+              data-height="undefined"
+              data-layout-iframe-id="waitlist-inline-form"
+              data-form-id="RYKEFxD5bGpz1q1bXZIZ"
+              title="Waitlist Modal"
+            />
           </div>
         </DialogContent>
       </Dialog>
