@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const GHL_WAITLIST_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/qohVjcq7e7u0UqVI7QvM/webhook-trigger/105ce050-98bc-4e7a-8014-dd3116265630'
+const GHL_WAITLIST_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/qohVjcq7e7u0UqVI7QvM/webhook-trigger/92705cd0-585d-4f64-9eb9-8e1a49298e38'
 
 export async function OPTIONS() {
   return NextResponse.json({}, {
@@ -18,6 +18,8 @@ export async function POST(request: NextRequest) {
     console.log('Received waitlist form data:', body)
     console.log('Environment:', process.env.NODE_ENV)
     console.log('Vercel URL:', process.env.VERCEL_URL)
+    
+
     
     // Transform the data to match GHL format
     const ghlData = {

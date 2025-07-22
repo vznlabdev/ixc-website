@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const GHL_CONTACT_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/qohVjcq7e7u0UqVI7QvM/webhook-trigger/b741144f-d409-4dea-9b82-59f267be46b6'
+const GHL_CONTACT_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/qohVjcq7e7u0UqVI7QvM/webhook-trigger/105ce050-98bc-4e7a-8014-dd3116265630'
 
 export async function OPTIONS() {
   return NextResponse.json({}, {
