@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Quote } from 'lucide-react'
 import Image from 'next/image'
+import WaitlistModal from '@/components/WaitlistModal'
 
 interface Testimonial {
   quote: string;
@@ -94,9 +95,13 @@ export default function TestimonialsSection() {
               See what your peers are saying about their workflow transformation
             </p>
           </div>
-          <Button className="self-start lg:self-auto">
-            Start Free
-          </Button>
+          <WaitlistModal 
+            trigger={
+              <Button className="self-start lg:self-auto">
+                Start Free
+              </Button>
+            }
+          />
         </div>
       </div>
       

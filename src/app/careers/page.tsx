@@ -12,9 +12,7 @@ export default function CareersPage() {
         title={careersContent.header.title}
         subtitle={careersContent.header.subtitle}
         primaryButtonText={careersContent.header.primaryButtonText}
-        primaryButtonUrl={careersContent.header.primaryButtonUrl}
         secondaryButtonText={careersContent.header.secondaryButtonText}
-        secondaryButtonUrl={careersContent.header.secondaryButtonUrl}
       />
 
       {/* Why Join Us */}

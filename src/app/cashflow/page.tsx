@@ -9,6 +9,7 @@ import { Briefcase, Check, X, TrendingUp, PhoneCall, Smile, ListChecks, Quote, Z
 import FAQSection from '@/components/FAQSection';
 import CTASection from '@/components/CTASection';
 import Image from 'next/image';
+import WaitlistModal from '@/components/WaitlistModal';
 
 interface StepCard {
   number: string;
@@ -344,19 +345,23 @@ function ComparisonSection() {
               Get paid on your work, not your credit score.
             </p>
             <div className="block lg:hidden mt-6">
-              <Button asChild size="lg" className="font-semibold px-8">
-                <Link href="/contact">
-                  Get Started Free
-                </Link>
-              </Button>
+              <WaitlistModal 
+                trigger={
+                  <Button size="lg" className="font-semibold px-8">
+                    Get Started Free
+                  </Button>
+                }
+              />
             </div>
           </div>
           <div className="hidden lg:block flex-shrink-0 lg:ml-8">
-            <Button asChild size="lg" className="font-semibold px-8">
-              <Link href="/contact">
-                Get Started Free
-              </Link>
-            </Button>
+            <WaitlistModal 
+              trigger={
+                <Button size="lg" className="font-semibold px-8">
+                  Get Started Free
+                </Button>
+              }
+            />
           </div>
         </div>
         
@@ -446,9 +451,13 @@ export default function CashflowPage() {
                 Get paid same day for completed work. No more waiting 30-60 days for property managers to process invoices.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button>
-                  Get Started
-                </Button>
+                <WaitlistModal 
+                  trigger={
+                    <Button>
+                      Get Started
+                    </Button>
+                  }
+                />
                 <Button variant="outline">
                   Learn More
                 </Button>

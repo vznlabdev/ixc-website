@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { MessageSquareX, Camera, Eye, FileX } from 'lucide-react'
-import Link from 'next/link'
+import WaitlistModal from '@/components/WaitlistModal'
 
 interface ProblemCard {
   icon: React.ComponentType<{ className?: string }>;
@@ -44,29 +44,31 @@ export default function ProblemsSection() {
                               Every property manager knows this pain.<br className="hidden md:block" /> It&apos;s costing you time, money, and sanity.
             </p>
             <div className="block lg:hidden">
-              <Button 
-                asChild 
-                size="lg" 
-                className="font-semibold px-10 py-5" 
-                style={{ fontSize: '12px' }}
-              >
-                <Link href="/contact">
-                  Start Free
-                </Link>
-              </Button>
+              <WaitlistModal 
+                trigger={
+                  <Button 
+                    size="lg" 
+                    className="font-semibold px-10 py-5" 
+                    style={{ fontSize: '12px' }}
+                  >
+                    Start Free
+                  </Button>
+                }
+              />
             </div>
           </div>
           <div className="hidden lg:block flex-shrink-0 lg:ml-8">
-            <Button 
-              asChild 
-              size="lg" 
-              className="font-semibold px-10 py-5" 
-              style={{ fontSize: '12px' }}
-            >
-              <Link href="/contact">
-                Start Free
-              </Link>
-            </Button>
+            <WaitlistModal 
+              trigger={
+                <Button 
+                  size="lg" 
+                  className="font-semibold px-10 py-5" 
+                  style={{ fontSize: '12px' }}
+                >
+                  Start Free
+                </Button>
+              }
+            />
           </div>
         </div>
         

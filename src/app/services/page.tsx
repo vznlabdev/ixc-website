@@ -1,6 +1,7 @@
 import Services from "@/components/Services";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import WaitlistModal from "@/components/WaitlistModal";
 
 export default function ServicesPage() {
   return (
@@ -14,11 +15,13 @@ export default function ServicesPage() {
                       <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-white/90">
               Comprehensive digital solutions tailored to your business needs
             </p>
-                      <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-gray-100 dark:text-blue-800 dark:hover:bg-white">
-            <Link href="/contact">
-              Get Started
-            </Link>
-          </Button>
+                      <WaitlistModal 
+            trigger={
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 dark:bg-gray-100 dark:text-blue-800 dark:hover:bg-white">
+                Get Started
+              </Button>
+            }
+          />
         </div>
       </section>
 

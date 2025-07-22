@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import Image from 'next/image';
+import WaitlistModal from '@/components/WaitlistModal';
 
 export default function HiddenCostSection() {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -94,11 +94,13 @@ export default function HiddenCostSection() {
                       Attract and retain top contractors
                     </li>
                   </ul>
-                  <Button asChild size="sm" className="font-semibold w-full bg-white dark:bg-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: '#6b51ff' }}>
-                    <Link href="/contact">
-                      Get Started Free
-                    </Link>
-                  </Button>
+                  <WaitlistModal 
+                    trigger={
+                      <Button size="sm" className="font-semibold w-full bg-white dark:bg-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800" style={{ color: '#6b51ff' }}>
+                        Get Started Free
+                      </Button>
+                    }
+                  />
                 </div>
               </div>
             </div>

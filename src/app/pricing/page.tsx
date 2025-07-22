@@ -13,7 +13,6 @@ export default function PricingPage() {
         title={pricingContent.header.title}
         subtitle={pricingContent.header.subtitle}
         primaryButtonText={pricingContent.header.primaryButtonText}
-        primaryButtonUrl={pricingContent.header.primaryButtonUrl}
       />
 
       {/* Pricing Cards */}

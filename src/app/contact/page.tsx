@@ -12,11 +12,10 @@ export default function ContactPage() {
       <PageHeader {...pageContent.contact.header} showButtons={false} />
       
       <div className="py-16 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        style={{ background: '#0a0a0a', }} >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12" style={{ background: '#0a0a0a' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div style={{ minHeight: '834px', background: '#0a0a0a' }}>
+          <div style={{ minHeight: '834px' }}>
                       <iframe
               src="https://link.1prompt.com/widget/form/LfTtf8BTl6yv5EBZjFar"
               style={{ width: '100%', height: '100%', border: 'none', borderRadius: '16px' }}

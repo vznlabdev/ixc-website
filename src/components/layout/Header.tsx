@@ -7,6 +7,7 @@ import { LinkButton } from '@/components/ui/link-button'
 import { ROUTES } from '@/lib/routes'
 import { DarkModeToggle } from '@/components/DarkModeToggle'
 import { Menu, X } from 'lucide-react'
+import WaitlistModal from '@/components/WaitlistModal'
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -21,7 +22,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
@@ -81,9 +82,13 @@ export default function Header() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <DarkModeToggle />
-            <LinkButton href={ROUTES.CONTACT}>
-              Get Started
-            </LinkButton>
+            <WaitlistModal 
+              trigger={
+                <LinkButton href="#">
+                  Get Started
+                </LinkButton>
+              }
+            />
           </div>
 
           {/* Mobile Menu Button */}
@@ -150,9 +155,13 @@ export default function Header() {
                 Contact
               </Link>
               <div className="pt-4 pb-2">
-                <LinkButton href={ROUTES.CONTACT} className="w-full" onClick={closeMobileMenu}>
-                  Get Started
-                </LinkButton>
+                <WaitlistModal 
+                  trigger={
+                    <LinkButton href="#" className="w-full" onClick={closeMobileMenu}>
+                      Get Started
+                    </LinkButton>
+                  }
+                />
               </div>
             </div>
           </div>
