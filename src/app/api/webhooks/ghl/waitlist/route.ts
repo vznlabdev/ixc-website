@@ -2,10 +2,22 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const GHL_WAITLIST_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/qohVjcq7e7u0UqVI7QvM/webhook-trigger/105ce050-98bc-4e7a-8014-dd3116265630'
 
+export async function OPTIONS() {
+  return NextResponse.json({}, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  })
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
     console.log('Received waitlist form data:', body)
+    console.log('Environment:', process.env.NODE_ENV)
+    console.log('Vercel URL:', process.env.VERCEL_URL)
     
     // Transform the data to match GHL format
     const ghlData = {
@@ -42,6 +54,12 @@ export async function POST(request: NextRequest) {
       success: true, 
       message: 'Waitlist form submitted successfully',
       ghlStatus: ghlResponse.status 
+    }, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      },
     })
 
   } catch (error) {
@@ -53,7 +71,14 @@ export async function POST(request: NextRequest) {
         message: 'Failed to submit waitlist form',
         error: error instanceof Error ? error.message : 'Unknown error' 
       },
-      { status: 500 }
+      { 
+        status: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
+      }
     )
   }
 } 
